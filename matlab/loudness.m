@@ -14,7 +14,7 @@ for p = 0:20:80
     [SPL, F] = iosr.auditory.iso226(p); 
     
     % plot
-    semilogx(interp(F,4),interp(SPL,4),'LineWidth',0.6);
+    semilogx(interp(F,4),interp(SPL,4),'-r','LineWidth',0.7);
     text(1000,p+6,int2str(p),'FontSize', 11,'HorizontalAlignment','center'); 
     
     hold on; 
@@ -33,4 +33,4 @@ set(gca,'XMinorGrid','off');
 set(gcf,'PaperUnits','centimeters',...
         'PaperPosition', [-1.2 0.1 20 10],...
         'PaperSize',     [17.8 9.9]);
-print(gcf, '.\latex\figures\loudness', '-dpdf', '-painters');
+print(gcf, '.\figures\loudness', '-dpdf', '-painters');

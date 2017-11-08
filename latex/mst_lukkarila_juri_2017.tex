@@ -523,7 +523,7 @@ Based on these, the \textit{word error rate} (WER) is defined as:
 WER \ = \ \frac{S + D + I}{N} \cdot 100\%,
 \end{equation}
 where $S$ is the number of substitutions, $D$ is the number of deletions, $I$ is the number of insertions and $N$ is the total number of words in the reference text. Essentially, it is the \textit{Levenshtein distance} for words, describing the total percentage of word errors. It should be noted that it is possible for the error rate to exceed $100\%$, as the number of additions is not limited. WER is the most widely used metric for evaluating and comparing the speech recognition accuracy of ASR systems \cite{huang2001spoken, kallasjoki2016}. \\\\
-For agglutinative languages such as Finnish, the WER can be a too harsh measure: Many words are formed by adding affixes to a base word, resulting in a large amount of very similar sounding words with only a slight difference in their meaning. While technically incorrect, recognition errors of one or two characters in these words will most likely not hinder the understandability as much as the WER indicates. The \textit{letter error rate} (LER) can be used as an alternative to the WER, giving a more accurate metric \cite[p.~41--42]{kallasjoki2016}. In LER, the Levenshtein distance is simply calculated for individual letters instead of full words. Other measures can be used as well, particularly for measuring very specific types of errors or special vocabulary words, such as the error rate of foreign names or acronyms \cite{mansikkaniemi2017continuous}.  \\\\
+For agglutinative languages such as Finnish, the WER can be a too harsh measure: Many words are formed by adding affixes to a base word, resulting in a large amount of very similar sounding words with only a slight difference in their meaning. While technically incorrect, recognition errors of one or two characters in these words will most likely not hinder the understandability as much as the WER indicates. The \textit{letter error rate} (LER) can be used as an alternative to the WER, giving a more accurate metric for agglutinative languages \cite[p.~41--42]{kallasjoki2016}. In LER, the Levenshtein distance is simply calculated for individual letters instead of full words. Other measures can be used as well, particularly for measuring very specific types of errors or special vocabulary words, such as the error rate of foreign names or acronyms \cite{mansikkaniemi2017continuous}.  \\\\
 For evaluating language models, the \textit{perplexity} measure is commonly used \cite{mansikkaniemi2017continuous}. Perplexity measures how accurately a statistical model predicts a sample. In the case of the language model, this translates to how well the language model predicts a word sequence in an evaluation text sample. Perplexity is calculated by
 \begin{equation}
 ppl \ = \ \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i|h)}},
@@ -532,11 +532,8 @@ where $P(w_i|h)$ is the probability of a word sequence given by the language mod
 
 \subsubsection{Recognizing conversational speech}
 
-Accurate speech recognition of everyday conversational speech has been the focus of much research in recent years, and remains challenging especially in noisy environments \cite{keronen2014approaching, kallasjoki2016, xiong2016achieving, li2014overview, keronen2010comparison, pylkkonen2013towards}. This particular area of ASR is the most relevant in the context of this work, as the Conversation Assistant is intended for use in everyday conversational situations. Conversational speech falls under the large vocabulary continuous speech recognition task. Conversational, or \textit{colloquial} speech, is typically quite informal and can differ noticeably from the standard, formal language \cite{enarvi2017automatic}. 
-Different dialects and pronunciations can pose a challenge, as the statistical models are only as good as the material they are trained with. \\\\
-The availability of training data. Neural networks require a large amount of training data. Challenges in correct alignment and accurate transcripts. \\\\
-Noise-robust speech recognition remains a challenge. Noise. Reverberation. \cite{kallasjoki2016, keronen2010comparison, keronen2014approaching, pohjalainen2009weighted, li2014overview}. Humans good at concentrating on one speaker among many other \cite{bronkhorst2000cocktail}. \\\\
-Efficient and robust \cite{pylkkonen2013towards}.
+Accurate speech recognition of everyday conversational speech has been the focus of much research in recent years, and remains challenging especially in noisy environments \cite{keronen2014approaching, kallasjoki2016, xiong2016achieving, li2014overview, keronen2010comparison, pylkkonen2013towards}. This particular area of ASR is the most relevant in the context of this work, as the Conversation Assistant is intended for use in everyday conversational situations. Conversational speech falls under the large vocabulary continuous speech recognition task, and is arguably the hardest area for online ASR. Conversational, or \textit{colloquial} speech, is typically quite informal and can differ noticeably from the standard, formal form of the language \cite{enarvi2017automatic}. Different dialects and pronunciations can pose a challenge, as the statistical models are only as good as the material they are trained with. The availability of suitable training data specifically for conversational speech can be problematic. Neural networks require a large amount of training data. Challenges in correct alignment and accurate transcripts. \\\\
+Noise-robust speech recognition remains a challenge. Noise. Reverberation. \cite{kallasjoki2016, keronen2010comparison, keronen2014approaching, pohjalainen2009weighted, li2014overview}. Humans good at concentrating on one speaker among many others \cite{bronkhorst2000cocktail}.
 
 \subsection{Software Development} \label{subsec:soft}
 
@@ -1025,21 +1022,18 @@ The plan was for 10-12 test participants. After the preliminary filtering, we ha
 
 \section{Results} \label{sec:results}
 
-In this section, the results obtained from the Conversation Assistant user testing are presented and analyzed. In the user testing, we focused on obtaining the subjective opinions of the intended end-users on the overall usefulness of the Conversation Assistant, as well as gathering user feedback on the key areas still in need of improvement. By design, our user testing produced qualitative data.
-
-\subsection{Numerical values}
-
-MATLAB was used for analyzing the test data, as well as producing all figures. Answers to questions with a \textit{yes or no} answer are visualized in figure \ref{fig:results_pie}. The first three of these questions were from the introduction sections background questionnaire, and the fourth from the debriefing section.
-\begin{figure}[h!]
+In this section, the results obtained from the Conversation Assistant user testing are presented and analyzed. In the user testing, we focused on obtaining the subjective opinions of the intended end-users on the overall usefulness of the Conversation Assistant, as well as gathering user feedback on the key areas still in need of improvement. By design, our user testing produced qualitative data. MATLAB was used for analyzing the test data, as well as producing all figures. \\\\
+Answers to questions with a \textit{yes or no} answer are visualized in figure \ref{fig:results_pie}. 
+\begin{figure}[b]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_1.png}
-		\caption*{\textbf{Q5:} "Do you own a smartphone?"}
+		\caption*{\textbf{Q5:} "Do you own a smartphone?" \vspace{2mm}}
 	\end{subfigure} \hspace{5mm}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_2.png}
-		\caption*{\textbf{Q6:} "Do you own a tablet?"}
-	\end{subfigure} \vspace{10mm}
+		\caption*{\textbf{Q6:} "Do you own a tablet?" \vspace{2mm}}
+	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_3.png}
 		\caption*{\textbf{Q8:} "Have you previously used an application or service that uses automatic speech recognition?"} 
@@ -1048,39 +1042,64 @@ MATLAB was used for analyzing the test data, as well as producing all figures. A
 		\includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_4.png}
 		\caption*{\textbf{Q32:} "Would you rather pay a monthly fee or a one-time payment for an application like the Conversation Assistant?"} 
 	\end{subfigure}
-	\caption{Yes or no -questions from all sections.}
+	\vspace{4mm}
+	\caption{Binary questions from all sections.}
 	\label{fig:results_pie} 
-\end{figure} \\\\
-The numerical data obtained, i.e., the numerical ratings given by the test participants, are presented with a box plot for each question, divided by the section. The actual numbers given by the test participants for each question are included in appendix \ref{sec:answers}. In the box plots, the (red) central mark represents the median value. The bottom of the box (in blue) corresponds to the 25th percentile, and the top of the box to the 75th percentile. It should be noted that when the median is not centered in the box, it shows sample skewness, meaning the values are distributed asymmetrically. The lines (in black) extending from the box display the range of all values that are not considered outliers. A value is judged to be an outlier and marked with a red cross if it is more than 1,5 times the interquartile range (i.e., the size of the box) away from the top or bottom of the box. \cite{boxplot}
+\end{figure}
+The first three of these questions were from the introduction section's background questionnaire (Q5, Q6, Q8), and the fourth from the debriefing section (Q32). All test participants owned a smartphone, and a little over half owned a tablet (five out of nine).
 
-\begin{figure}[h!]
+\subsection{Numerical values}
+
+The numerical data obtained, i.e., the numerical ratings given by the test participants, are presented with a box plot for each question, divided by the section. The actual numbers given by the test participants for each question are included in appendix \ref{sec:answers}, and the MATLAB code in appendix \ref{sec:matlab}. In the box plots, the (red) central mark represents the median value. The bottom of the box (in blue) corresponds to the 25th percentile, and the top of the box to the 75th percentile. It should be noted that when the median is not centered in the box, it shows sample skewness, meaning the values are distributed asymmetrically. The lines (in black) extending from the box display the range of all values that are not considered outliers. A value is judged to be an outlier and marked with a red cross if it is more than 1,5 times the interquartile range (i.e., the size of the box) away from the top or bottom of the box. \cite{boxplot} \\\\
+Figure \ref{fig:results1} presents the data from the background questionnaire, which consists only of one question measuring the self-perceived proficiency with computers and mobile devices. 
+\begin{figure}[b!]
 	\centering
 	\includegraphics[width=\textwidth]{T2_box1.pdf}
 	\caption{Question 10: "In your own opinion, how proficient are you at using computers and mobile devices in everyday life?"}
 	\label{fig:results1} 
 \end{figure}
-
+The question was included in order to get a rough estimate for how much experience the participant has with these devices and how comfortable they are with technology in general. The subjective wording in the assessment served a purpose as well: Someone who feels that they are good with smart devices likely has a very positive attitude towards technology, regardless of how much knowledge and skill they might actually possess.  Conversely, someone who rates their skills very low likely has some aversion and negative expectations towards technology, even if their skills might actually be relatively comparable to someone with a higher rating. Therefore, the answers to this question, together with the other background questions, can be quite useful for better understanding the answers to other questions. For example, if an experienced user thinks the application is easy to use, it might not tell that much about its actual ease-of-use, especially for novices. Whereas, if someone who feels they are very bad at using computers thinks the application is very easy to use, the opinion has much more weight to it. In the same way, if a skilled participant, who owns both a smartphone and a tablet thinks the application is really hard to use, then it most probably is. If a person with a low reported proficiency thinks it's hard to use, it can be more due to their lack of experience with these devices and negative attitude, instead of any design flaws in the application itself. The question also served as a gentle introduction to the questionnaire's format and functioning, preparing and giving the participants some practice with it before moving on to the main questions. \\\\
+Figure \ref{fig:results2} presents the data from section one of the user test. The questions were the following:
+\begin{description}
+	\item[Q11] Did the Conversation Assistant help you to understand speech? \\ \textit{(not at all -- very much)}
+	\item[Q12] Was using the Conversation Assistant easy? \\ \textit{(not at all -- very easy)}
+	\item[Q13] Did using the Conversation Assistant make it harder to follow speech? \\ \textit{(not at all -- very much)}
+	\item[Q14] Was the speech recognition fast enough? \\ \textit{(too slow -- fast enough)}
+	\item[Q15] Were the speech recognition results accurate enough (speech was recognized correctly)? \\ \textit{(unusable -- good enough)}
+\end{description}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{T2_box2.pdf}
 	\caption{Section 1 results.}
 	\label{fig:results2} 
 \end{figure}
-
+Figure \ref{fig:results3} presents the data from section two of the user test. The questions were the following:
+\begin{description}
+	\item[Q16] Did the Conversation Assistant help you to understand speech? \\ \textit{(not at all -- very much)}
+	\item[Q17] Was using the Conversation Assistant easy? \\ \textit{(not at all -- very easy)}
+	\item[Q18] Did using the Conversation Assistant make it harder to follow speech? \\ \textit{(not at all -- very much)}
+	\item[Q19] Did using the Conversation Assistant slow down the conversation? \\ \textit{(not at all  -- very much)}
+	\item[Q20] Was the speech recognition fast enough? \\ \textit{(too slow -- fast enough)}
+	\item[Q21] Were the speech recognition results accurate enough (speech was recognized correctly)? \\ \textit{(unusable -- good enough)}
+\end{description}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{T2_box3.pdf}
 	\caption{Section 2 results.}
 	\label{fig:results3} 
 \end{figure}
-
+Figure \ref{fig:results4} presents the data from the debriefing. The questions were the following:
+\begin{description}
+	\item[Q22] Was the Conversation Assistant useful in test situations? \\ \textit{(not at all -- very much)}
+	\item[Q23] Do you consider it to be important that the size and color of the font can be freely adjusted? \\ \textit{(not at all -- very important)}
+\end{description}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{T2_box4.pdf}
 	\caption{Debriefing results.}
 	\label{fig:results4} 
 \end{figure}
-
+Figure \ref{fig:results4} presents the results for how much the participants would be ready to pay monthly or as an one-time purchase for an application like the Conversation Assistant?
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{T2_box5.pdf}
@@ -1091,6 +1110,8 @@ The numerical data obtained, i.e., the numerical ratings given by the test parti
 \subsection{Verbal feedback}
 
 \subsection{Analysis}  
+
+One factor to keep in mind when analyzing the results is that the people who participated in the testing showed enough interest towards the Conversation Assistant to take part in the testing, meaning the test participants have to be viewed as inherently biased in some small degree towards the application. It seems probable that someone with no interest towards this type of assistive application would most probably not participate in testing it either.
 
 \clearpage
 
@@ -1256,7 +1277,7 @@ The raw data from the user tests is included here. Each set of answers is identi
 
 \section{MATLAB Code} \label{sec:matlab}
 
-This section presents the MATLAB scripts created for analyzing the user test results and producing most of the figures.
+This section presents the MATLAB scripts created for analyzing the user test results and producing most of the figures presented in this thesis.
 
 \lstset{
 	language=matlab,
@@ -1265,17 +1286,17 @@ This section presents the MATLAB scripts created for analyzing the user test res
 	extendedchars=true,
 }
 
-\subsection*{loudness.m}
+\subsection*{results.m}
 \vspace{-4mm}
-\lstinputlisting{loudness.m}
-\vspace{8mm}
-\subsection*{filterbank.m}
-\vspace{-4mm}
-\lstinputlisting{filterbank.m}
+\lstinputlisting{results.m}
 \vspace{8mm}
 \subsection*{audiosignal.m}
 \vspace{-4mm}
 \lstinputlisting{audiosignal.m}
+\vspace{8mm}
+\subsection*{bformat.m}
+\vspace{-4mm}
+\lstinputlisting{bformat.m}
 \vspace{8mm}
 \subsection*{cepstrum.m}
 \vspace{-4mm}
@@ -1285,8 +1306,12 @@ This section presents the MATLAB scripts created for analyzing the user test res
 \vspace{-4mm}
 \lstinputlisting{gmm.m}
 \vspace{8mm}
-\subsection*{results.m}
+\subsection*{filterbank.m}
 \vspace{-4mm}
-\lstinputlisting{results.m}
+\lstinputlisting{filterbank.m}
+\vspace{8mm}
+\subsection*{loudness.m}
+\vspace{-4mm}
+\lstinputlisting{loudness.m}
 
 \end{document}
