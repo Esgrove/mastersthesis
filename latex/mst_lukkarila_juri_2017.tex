@@ -152,7 +152,7 @@
 \mysection{Preface}
 
 This work was carried out during the spring and summer of 2017 at the Speech Recognition research group of the Department of Signal Processing and Acoustics at Aalto University School of Electrical Engineering. This thesis would not have been possible without the support of the Academy of Finland for the project \textit{Conversation Assistant for the Hearing Impaired}. \\\\
-First and foremost, I would like to thank supervisor Prof.\ Mikko Kurimo and my advisor D.Sc.\ Kalle Palomäki for giving me the opportunity to work on this interesting and multifaceted topic. I am grateful for the freedom and continued support given to me during this work. I would like to thank Symeon Delikaris-Manias and Juhani Paasonen from the Spatial Sound research group for assistance with the background noise recordings used in the user tests, and Ilkka Huhtakallio for providing the necessary audio equipment. My thanks to Olli Savisaari from the User Interfaces research group for consulting with user testing methods. My thanks to Seppo Enarvi, Reima Karhila, Katri Leino, Ulpu Remes, Aku Rouhe and Peter Smit for general help, tips and discussion. \\\\
+First and foremost, I would like to thank supervisor Prof.\ Mikko Kurimo and my advisor D.Sc.\ Kalle Palomäki for giving me the opportunity to work on this interesting and multifaceted topic. I am grateful for the freedom and continued support given to me during this work. I would like to thank Symeon Delikaris-Manias and Juhani Paasonen from the Spatial Sound research group for assistance with the background noise recordings used in the user tests, and Ilkka Huhtakallio for providing the necessary audio equipment. My thanks to Olli Savisaari from the User Interfaces research group for consulting with user testing methods. From the Speech Recognition group, I would like to thank Seppo Enarvi, Reima Karhila, Katri Leino, Ulpu Remes, Aku Rouhe and Peter Smit for general help, tips and discussion. \\\\
 I would like to thank Päivi Rainò from HUMAK and Tarja Kaikkonen from Kuuloliitto ry for helping to recruit deaf and hard of hearing persons for the user tests, and many thanks to the people who participated in the tests. \\\\
 Finally, I would like to thank Siiri for all the support and motivation. \\
 
@@ -293,13 +293,13 @@ Hearing loss can be an invisible disability, and there remains some social stigm
 Hearing impairment can be defined as having a reduced or deficient hearing ability, generally caused as a result of decreased hearing sensitivity in one or both ears \cite{moore2007cochlear, ohlenforst2017effects}. Neurological conditions affecting auditory processing in the brain have also been identified, though they are quite rare and hard to diagnose. These \textit{auditory processing disorders} show as various difficulties in recognizing and interpreting sounds correctly, even though the ears are functioning physiologically normally \cite{deafness}. The terms \textit{hearing impairment} and \textit{hearing loss} ar commonly used synonymously \cite{moore2007cochlear}. In this work, \textit{hearing loss} is used to refer specifically to the sensory impairment of hearing, and \textit{hearing impairment} to the overall condition and disability resulting from auditory dysfunction. \\\\
 Hearing loss can be divided into two main categories based on the physiological cause \cite{moore2007cochlear, deafness}: Conductive hearing loss is a result of abnormalities in the outer ear or in the ossicles ("hearing bones") in the middle ear, with the effect that sound is not properly transmitted to the inner ear. Sensorineural hearing loss results from a malfunction of the inner ear or the auditory nerve, meaning that the problem is in converting sound vibration into neural impulses and transmitting them to the auditory cortex of the brain. For example, damage to hair cells in the cochlea is a common form of sensorineural hearing loss \cite{moore2007cochlear}. The anatomy of the ear is presented in figure \ref{fig:ear}, describing the parts belonging to the outer, middle, and inner ear. \\\\
 The overwhelming majority of all hearing impairments are of the sensorineural type, with age-related hearing loss (\textit{presbycusis}) being the most common cause, followed by noise-induced hearing loss \cite{koskela2013kuulokojeen}. It is possible to have a combination of both conductive and sensorineural hearing defects as well. Another significant division for hearing loss and its treatment is the age of onset in relation to speech acquisition \cite{deafness, raino2012sisakorvaistutteen}: Prelingual hearing loss is present before language acquisition, meaning it is either congenital (present at birth) or develops soon after. Postlingual hearing loss occurs after the development of speech and language. This distinction is important since deafness and hearing loss can significantly affect the language acquisition of children, a fundamental part of general cognitive development \cite{wilson2017global, moore2007cochlear, raino2012sisakorvaistutteen}. \\
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering 
 	\includegraphics[width=\textwidth]{ear.pdf}
 	\caption{Anatomy of the ear. The outer ear consists of the pinna and the ear canal, ending to the eardrum (tympanic membrane). The middle ear is a small air-filled cavity containing the ossicles: three tiny bones responsible for transmitting the vibration of the eardrum to the inner ear. The Eustachian tube is a narrow channel connecting the middle ear to the oral cavity, balancing the air pressure inside to the external air pressure. The inner ear houses the cochlea, a spiral-shaped liquid-filled tube containing the basilar membrane, along which the hair cells are positioned. Hair cells convert the vibration of the basilar membrane into neural impulses in the auditory nerve. \cite{moore2007cochlear, pulkki2015communication}}
 	\label{fig:ear} 
 \end{figure} \\
-Audiologically\footnote{Audiology is the scientific study of hearing, including the treatment of hearing defects.}, hearing loss is categorized and its severity ranked according to the increase in the threshold of hearing, i.e., the sound pressure level required for the perceptual detection of sound \cite{moore2007cochlear}. It is measured in decibels and compared to the statistically defined and standardized nominal level of hearing. Human hearing is strongly frequency-dependent, and is most sensitive at frequencies from approximately one to five kilohertz \cite{pulkki2015communication}. Consequently, this frequency range is critical for speech perception and many other everyday tasks. \\\\ Figure \ref{fig:loudness} presents the equal-loudness contours (curves) as they are defined in the ISO 226:2003 standard \cite{iso226}. These contours describe the \textit{sound pressure level} (SPL) required for a pure tone (single frequency sinusoidal waveform) to be judged equally loud depending on the frequency of the tone, illustrating the frequency-dependent sensitivity of hearing \cite{pulkki2015communication}. Notably, the equal-loudness curve for zero phons corresponds to the absolute threshold of hearing. Hearing loss can therefore be technically defined as upward changes to this curve, the frequency-dependent threshold of hearing, that exceed the normal small statistical variation between different persons. \\
+Audiologically\footnote{Audiology is the scientific study of hearing, including the treatment of hearing defects.}, hearing loss is categorized and its severity ranked according to the increase in the threshold of hearing, i.e., the sound pressure level required for the perceptual detection of sound \cite{moore2007cochlear}. It is measured in decibels and compared to the statistically defined and standardized nominal level of hearing. Human hearing is strongly frequency-dependent, and is most sensitive at frequencies from approximately one to five kilohertz \cite{pulkki2015communication}. Consequently, this frequency range is critical for speech perception and many other everyday tasks. Figure \ref{fig:loudness} presents the equal-loudness contours (curves) as they are defined in the ISO 226:2003 standard \cite{iso226}. These contours describe the \textit{sound pressure level} (SPL) required for a pure tone (single frequency sinusoidal waveform) to be judged equally loud depending on the frequency of the tone, illustrating the frequency-dependent sensitivity of hearing \cite{pulkki2015communication}. Notably, the equal-loudness curve for zero phons corresponds to the absolute threshold of hearing. Hearing loss can therefore be technically defined as upward changes to this curve, the frequency-dependent threshold of hearing, that exceed the normal small statistical variation between different persons. \\
 \begin{figure}[]
 	\centering 
 	\includegraphics[width=\textwidth]{loudness.pdf}
@@ -338,14 +338,13 @@ According to the Global Burden of Disease study of 2015 \cite{wilson2017global},
 \subsubsection{Assistive Devices}
 
 The main technological solutions to hearing loss can be divided into three main categories: hearing aids, cochlear implants, and other assistive devices \cite{moore2007cochlear}. Hearing aids are used in mild to severe cases to augment a reduced hearing ability \cite{moore2007cochlear, levitt2007historical}. A cochlear implant is required when hearing aids cannot help anymore, in cases of profound or total hearing loss \cite{moore2007cochlear, levitt2007historical}. Other assistive devices include both supplementary techniques for hearing augmentation, and a wide variety of methods and gadgets based on visual perception and physical interaction. For additional hearing assistance, the previously mentioned audio induction loop and FM system are the most common and widely used, and many hearing aids and cochlear implants have a build-in receiver for these devices. Examples of the latter category include alarm systems using flashing lights instead of sound for applications such as smoke detectors and door bells. A typical example of an assistive device substituting sound with physical interaction is an alarm clock using vibration for awaking a deaf person. Hearings aids and cochlear implants are being actively developed, and have improved remarkably during the past few decades, though neither device can match the performance of normal hearing \cite{moore2007cochlear, levitt2007historical, goehring2016speech}. More traditional support methods are still being used as well: Lip reading is utilized by many hearing impaired individuals for understanding speech in conjunction with the devices. \\\\
-Hearing aids are used to amplify and modify incoming sound, enhancing and augmenting the users own compromised hearing \cite{levitt2007historical, salonen2013hearing, fink2008benefit}. Modern devices are based on digital electronics and microprocessors, and come in many different types. The most common variations are the different \textit{in-the-ear} and \textit{behind-the-ear} models. Figure \ref{fig:hearingaids} presents various types of modern hearings aids from one particular manufacturer (Widex). \\
-\begin{figure}[h]
+Hearing aids are used to amplify and modify incoming sound, enhancing and augmenting the users own compromised hearing \cite{levitt2007historical, salonen2013hearing, fink2008benefit}. Modern devices are based on digital electronics and microprocessors, and come in many different types. The most common variations are the different \textit{in-the-ear} and \textit{behind-the-ear} models. Figure \ref{fig:hearingaids} presents various types of modern hearings aids from one particular manufacturer (Widex). In addition to the simple amplification provided by earlier analog models, modern digital hearing aids utilize real-time \textit{digital signal processing} (DSP) for tasks such as speech enhancement, dynamics processing (compression), filtering, noise reduction, adaptive gain control and feedback cancellation \cite{moore2007cochlear, levitt2007historical, goehring2016speech}. Directional microphone systems are used for improving speech recognition in noise. Modern wireless transmission technology, such as Bluetooth, can be used to easily link hearing aids directly with sound sources like a telephone or television \cite{salonen2013hearing}. Modern hearing aids are personally fitted for each user, matching and compensating for the individual frequency response of the users hearing for best results \cite{moore2007cochlear}. \\
+\begin{figure}[b]
 	\centering 
 	\includegraphics[trim={0cm 4cm 0cm 4cm}, clip, width=\textwidth]{hearingaids.png} 	% trim={<left> <lower> <right> <upper>}
 	\caption{Different types of modern hearing aids: behind-the-ear (back, middle), receiver-in-canal (back, left and rightmost), in-the-canal (front, left) and in-the-ear (front, right). Image source: \href{https://www.widex.pro/en/products/unique-hearing-aids}{\textit{Widex}}}
 	\label{fig:hearingaids} 
 \end{figure} \\
-In addition to the simple amplification provided by earlier analog models, modern digital hearing aids utilize real-time \textit{digital signal processing} (DSP) for tasks such as speech enhancement, dynamics processing (compression), filtering, noise reduction, adaptive gain control and feedback cancellation \cite{moore2007cochlear, levitt2007historical, goehring2016speech}. Directional microphone systems are used for improving speech recognition in noise. Modern wireless transmission technology, such as Bluetooth, can be used to easily link hearing aids directly with sound sources like a telephone or television \cite{salonen2013hearing}. Modern hearing aids are personally fitted for each user, matching and compensating for the individual frequency response of the users hearing for best results \cite{moore2007cochlear}. \\\\
 A cochlear implant is a surgically implanted device that can provide auditory perception to people with severe or profound sensorineural hearing loss, even in the case of complete deafness \cite{moore2007cochlear, peterson2010cochlear}. Cochlear implants bypass the ear altogether by directly stimulating the auditory nerve with electrical signals through electrodes inserted into the cochlea. All implants are comprised of two major elements: The external, detachable parts, and the internal, surgically implanted parts. The external parts are usually removed for activities such as sleeping and bathing \cite{peterson2010cochlear}. \\\\
 Similarly to hearing aids, the audio signal is acquired with an external microphone or picked up wirelessly. The signal is processed with a speech processor typically worn behind the ear. It is then transmitted wirelessly through the skin to the internal implant. The internal implant part consists of a receiver and the electrodes. The placement of these components is illustrated in figure \ref{fig:implant}, which presents the same anatomic view of the ear as in figure \ref{fig:ear}, but with an added cochlear implant: \\
 \begin{figure}[h]
@@ -372,7 +371,7 @@ In this work, the primary interest in automatic speech recognition is in using i
 \begin{figure}[h]
 	\centering 
 	\includegraphics[trim={1.8cm 0cm 1.8cm 0cm}, clip, width=\textwidth]{ASR.pdf}
-	\caption{Block diagram for the structure of a typical speech recognition system.}
+	\caption{Block diagram for the structure of a typical speech recognition system. The audio input can be a real-time signal from a microphone, or a existing recording or audio track. Depending on the application, the text result can be displayed immediately or saved into a text file.}
 	\label{fig:asr} 
 \end{figure} \\
 At the technical level, automatic speech recognition is a conversion process, where an acoustic data sequence (speech) is converted into a symbolic character sequence (text) \cite{yu2014automatic}. In statistical terms, speech recognition can be categorized as a classification problem among the wider context of general pattern recognition tasks \cite{huang2001spoken}. The speech recognition process can be formulated mathematically in the following way \cite{huang2001spoken, gales2008application, kallasjoki2016}: the goal of the system is to produce the word sequence $ \hat{\bm{W}} = w_1, w_2, w_3,\dots,w_n$, for a given acoustic observation sequence $\bm{O}$. The most probable word sequence corresponding to $\bm{O}$ can be found by maximizing the posterior (i.e., conditional) probability $P(\bm{W} | \bm{O})$:
@@ -402,21 +401,25 @@ The following subsections present a brief review of each individual part of the 
 The input to an ASR system is a digital audio signal, the digitized version of an acoustic sound wave and comprised of discrete samples \cite{yu2014automatic, huang2001spoken}. Figure \ref{fig:audio} presents the waveform and the spectrogram for a short speech sample. The spectrogram is the magnitude spectrum of a signal as a function of time, describing how the frequency contents vary temporally.
 \begin{figure}[t]
 	\centering
-	\includegraphics[trim={0cm 0.3cm 0.4cm 0.5cm}, clip, width=\textwidth]{audio.pdf}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[trim={0.4cm 0cm 0.1cm 0.2cm}, clip, width=\textwidth]{waveform.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{\textwidth}
+		\includegraphics[trim={0.4cm 0cm 0.1cm 0cm}, clip, width=\textwidth]{spectrogram.pdf}
+	\end{subfigure}
 	\caption{The waveform and corresponding spectrogram of a speech signal containing the words "zero, one, two, three" pronounced in Finnish.}
 	\label{fig:audio} 
 \end{figure} 
 An audio signal contains acoustic information, such as the energy and frequency of its components. But in ASR, we are interested in the linguistic information. Therefore, the acoustic properties of an audio sample need to be somehow mapped to linguistic information. However, the problem with recognizing speech sounds is that every person has an unique voice, meaning that the same word or sentence spoken by different persons produce widely varying acoustic information contents. These depend for example on the speakers gender, pronunciation, intonation, tone of voice, mood, and characteristic pitch and timbre. The voice of a one specific individual does not stay constant either, and can vary noticeably between different times and situations. Also, in addition to the speech signal of interest, all real-world signals contain some degree of background noise and other unwanted sounds from the recording environment \cite{huang2001spoken}. Therefore, the acoustic properties of a speech sample cannot be used directly. \\\\
-What is needed are some characteristic measures, or \textit{features}, that can describe and discriminate between different speech sounds, and extract the linguistic information independent of the speakers personal voice. These features should contain the essential information and measurements needed for classifying speech. \textit{Feature extraction} is then the process of calculating a sequence of these features, a \textit{feature vector}, based on the input audio signal. Ideally, a feature vector should be compact, containing only the necessary information, be robust against noise, as well as fast to calculate so that it can be used in real-time \cite{huang2001spoken}. Consequently, audio signals typically contain a lot of information that is not useful for this particular task. In feature extraction, the input signal is therefore processed to remove unwanted and redundant information as well as noise, while emphasizing the important characteristics. \\
+What is needed are some characteristic measures, or \textit{features}, that can describe and discriminate between different speech sounds, and extract the linguistic information independent of the speakers personal voice. These features should contain the essential information and measurements needed for classifying speech. \textit{Feature extraction} is then the process of calculating a sequence of these features, a \textit{feature vector}, based on the input audio signal. Ideally, a feature vector should be compact, containing only the necessary information, be robust against noise, as well as fast to calculate so that it can be used in real-time \cite{huang2001spoken}. Consequently, audio signals typically contain a lot of information that is not useful for this particular task. In feature extraction, the input signal is therefore processed to remove unwanted and redundant information as well as noise, while emphasizing the important characteristics. \\\\
 Common preprocessing steps include filtering the signal: The very low and high frequencies can generally be removed as speech is mostly focused between the frequencies from 100 to 4000 Hz. The input is often downsampled to a lower sampling rate, effectively removing unnecessary high frequencies as all frequencies above the Nyquist limit are lost. In practice, sampling rates as low as 8 kHz can be used, limiting the highest possible frequency to just 4 kHz, without a noticeably reduced recognition accuracy \cite{huang2001spoken}. A pre-emphasis filter can be used to adjust the spectral tilt \cite{kallasjoki2016}. The signal is divided into partially overlapping frames, typically around 20 to 30 milliseconds in length, so that the frequency content of each frame can be expected to be fairly stationary \cite{huang2001spoken, gales2008application}. \\\\
 \textit{Mel-frequency cepstral coefficients} (MFCC) has been a very popular choice for the feature representation type \cite{yu2014automatic, gales2008application, kallasjoki2016}. It is used because of its capacity for eliminating the speaker dependent characteristics of speech and for matching well to the logarithmic loudness and pitch perception of humans. The mel scale (short for \textit{melody}) is a psychoacoustic frequency scale, where the change in pitch is judged to be perceptually equal in distance on the scale \cite[p.~174]{pulkki2015communication}. Compared to the objective frequency scale in hertz, the mel scale puts more emphasis on low frequencies below one kilohertz, and conversely, compresses higher frequencies as the interval between perceptually equal pitch increments starts to increase exponentially with the frequency in hertz. The mel scale is used in order to better match the non-linear properties of human hearing, accentuating the frequency bands that are more important for human auditory perception. A common formula for converting a frequency in hertz to the mel scale is:
 \begin{equation} \label{eq:mel}
 m \ = \ 2595 \  \cdot \ \log_{10} \ \left(1 \ + \ \frac{f}{700} \right),
-\end{equation} where $f$ is the frequency in Hertz. The anchor point is set to 1000 Hz $\leftrightarrow$ 1000 mel \cite[p.~174--175]{pulkki2015communication}. As we are interested in the frequency contents of the signal, each frame is windowed and converted to the frequency domain by calculating the short-time power spectrum \cite{gales2008application}. A mel-scale filter bank with triangular band-pass filters spaced in perceptually equally long frequency bands is applied to each frame. A mel-scale filter bank is presented in figure \ref{fig:melbank}. The combined energy of each frequency band is then calculated. Finally, the cepstral coefficients are obtained by first taking the logarithm of each energy band, mimicking the logarithmic loudness perception of hearing, and applying the discrete cosine transform, in effect compressing and decorrelating the energies \cite{huang2001spoken, gales2008application}. \\\\
-The cepstrum can be viewed as the spectrum of a spectrum, as the inverse (discrete) Fourier transform of a log spectrum transforms to the cepstral domain.
+\end{equation} where $f$ is the frequency in Hertz. The anchor point is set to 1000 Hz $\leftrightarrow$ 1000 mel \cite[p.~174--175]{pulkki2015communication}. As we are interested in the frequency contents of the signal, each frame is windowed and converted to the frequency domain by calculating the short-time power spectrum \cite{gales2008application}. A mel-scale filter bank with triangular band-pass filters spaced in perceptually equally long frequency bands is applied to each frame. A mel-scale filter bank is presented in figure \ref{fig:melbank}. The combined energy of each frequency band is then calculated. Finally, the cepstral coefficients are obtained by first taking the logarithm of each energy band, mimicking the logarithmic loudness perception of hearing, and applying the discrete cosine transform, in effect compressing and decorrelating the energies \cite{huang2001spoken, gales2008application}. The cepstrum can be viewed as the spectrum of a spectrum, as the inverse (discrete) Fourier transform of a log spectrum transforms to the cepstral domain.
 \begin{figure}[t]
 	\centering
-	\includegraphics[trim={0cm 0cm 0cm 0.5cm}, clip, width=\textwidth]{melfilter.pdf}
+	\includegraphics[trim={0.1cm 0cm 0cm 0.5cm}, clip, width=\textwidth]{melfilter.pdf}
 	\caption{Mel-scale filter bank with 12 filter bands from 0 to 4000 Hz. Note that in practice the number of filters is typically higher, a low number of filters was used here for a clear illustration.}
 	\label{fig:melbank} 
 \end{figure}
@@ -439,7 +442,7 @@ c(n) \ = \ F^{-1} \big\{ \log E(k) \ + \ \log H(k) \big\} \ = \ F^{-1} \big\{\lo
 In practice, the separation does not work perfectly, as the source-filter model is already a simplification in itself. However, it is often an accurate enough approximation for practical usage \cite[p.~314]{huang2001spoken}. The separation can be done with linear band-pass filtering, referred to as \textit{liftering} in the cepstral domain. In practice, this can be achieved by applying a rectangular window to the cepstrum. Functionally, this is the same as simply dropping the coefficients outside the filter band. Truncating the cepstral coefficients, i.e., taking only the $n$ first coefficients, isolates the speaker-independent filter, meaning the spectral envelope displaying the formants of a speech signal. A traditional number of coefficients used is 12 \cite{huang2001spoken, gales2008application}. Conversely, the higher cepstral coefficients describe the primarily speaker-dependent excitation characteristics, corresponding to the spectral fine structure \cite{gales2008application}. The effect of cepstral truncation on the spectrum is illustrated in figure \ref{fig:cepstrum}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[trim={0.1cm 0cm 0cm 0cm}, clip, width=\textwidth]{cepstrum.pdf}
+	\includegraphics[trim={0.1cm 0cm 0cm 0.4cm}, clip, width=\textwidth]{cepstrum.pdf}
 	\caption{The effect of cepstral truncation on the spectrum of a 30ms frame containing the Finnish phoneme $/a/$. The numbers describe how many cepstral coefficients are being used. As the number of coefficients is lowered, the underlying formant structure becomes clear.}
 	\label{fig:cepstrum} 
 \end{figure} \\
@@ -448,17 +451,17 @@ Additionally, the time varying nature of speech can be captured by taking the ti
 \subsubsection{Acoustic model}
 
 The \textit{acoustic model} provides a statistical model for classifying feature vectors into units of speech \cite{kallasjoki2016}. One of the practical choices for these classes are the \textit{phonemes} of a particular language. Words or longer phrases could technically be used as well, however, this would lead to a very large number of classes as each word or phrase would require its own class. In written language, all words are formed with a very limited set of alphabetic letters, or \textit{graphemes}. In linguistics, a grapheme is the smallest unit of writing in any given language. For example, the English alphabet consists of 26 letters and in Finnish, 29 letters are used. Similarly, phonemes are the different units of sound that can be used to form all possible words in a particular language \cite[p.~24--25]{huang2001spoken}. For example, English is commonly divided into roughly 45 phonemes, varying slightly between different dialects and interpretations. This is very useful for acoustic modeling, since it means the acoustic model needs only to be trained to recognize this small set of phoneme classes, which can then be used to classify a practically unlimited number of different words. As the pronunciation of a phoneme depends quite heavily on the neighboring phonemes, it is common to actually use the triphone for the acoustic classes. A triphone is a sequence of three phonemes: one phoneme with the two nearest phonemes as context. Consequently, the acoustic model can be described as the collection of probabilities for how well a given feature vector corresponds to a specific phoneme sequence. \\\\
-\textit{Hidden Markov Models} (HMM) have been widely used for implementing the acoustic model \cite{gales2008application, hori2013speech}. Speech is approximated well by a \textit{Markov chain}, a stochastic model for randomly changing systems where the next state depends only on the current state \cite[p.~23--26]{yu2014automatic}. The chain consists of discrete states and state changes that are modeled with transition probabilities. In a hidden Markov model, the states cannot be observed directly (hence the term \textit{hidden}). Instead, an output that is dependent on the states is known. In speech recognition, an utterance of a phoneme is considered a hidden state that emits an observable representation in the form of a feature vector. A three-state HMM is generally used to model one triphone in a left-to-right topology, meaning the states are constrained to be in chronological order \cite{kallasjoki2016}. Figure \ref{fig:hmm} present a three-state, left-to-right HMM.
-\begin{figure}[h!]
+\textit{Hidden Markov Models} (HMM) have been widely used for implementing the acoustic model \cite{gales2008application, hori2013speech}. Speech is approximated well by a \textit{Markov chain}, a stochastic model for randomly changing systems where the next state depends only on the current state \cite[p.~23--26]{yu2014automatic}. 
+\begin{figure}[b]
 	\centering
-	\includegraphics[width=\textwidth]{hmm.pdf}
+	\includegraphics[trim={0.1cm 0cm 0.1cm 0.5cm}, clip, width=\textwidth]{hmm2.pdf}
 	\caption{A three-state, left-to-right HMM diagram. $a_{ij}$ is the transition probability from state $s_i$ to state $s_j$. Each state has an emission probability distribution $b_i$ conditional over the observation sequence $O$.}
 	\label{fig:hmm} 
 \end{figure}
-The probability that an observation is an emission of a specific state needs to be also modeled. For representing the probability distribution of observations, \textit{Gaussian Mixture Models} (GMM) have been a popular choice \cite{gales2008application, hinton2012deep}. Gaussian mixture models are built by linearly combining two or more multivariate Gaussian distributions together. A simplified example of an GMM is presented in figure \ref{fig:gmm}.
+The chain consists of discrete states and state changes that are modeled with transition probabilities. In a hidden Markov model, the states cannot be observed directly (hence the term \textit{hidden}). Instead, an output that is dependent on the states is known. In speech recognition, an utterance of a phoneme is considered a hidden state that emits an observable representation in the form of a feature vector. A three-state HMM is generally used to model one triphone in a left-to-right topology, meaning the states are constrained to be in chronological order \cite{kallasjoki2016}. Figure \ref{fig:hmm} present a three-state, left-to-right HMM. The probability that an observation is an emission of a specific state needs to be also modeled. For representing the probability distribution of observations, \textit{Gaussian Mixture Models} (GMM) have been a popular choice \cite{gales2008application, hinton2012deep}. Gaussian mixture models are built by linearly combining two or more multivariate Gaussian distributions together. A simplified example of an GMM is presented in figure \ref{fig:gmm}.
 \begin{figure}[b]
 	\centering
-	\includegraphics[trim={0cm 0.2cm 0cm 0.2cm}, clip, width=\textwidth]{gmm.pdf}
+	\includegraphics[trim={0cm 0.2cm 0cm 0.2cm}, clip, width=\textwidth]{gmm2.pdf}
 	\caption{A combination of multivariate Gaussian distributions. Note that the scaling is wrong for an actual GMM, as this is only a simple illustration. A much higher dimensionality is required as well in reality.}
 	\label{fig:gmm} 
 \end{figure} \\\\
@@ -610,7 +613,13 @@ This section describes the proposed Conversation Assistant solution and presents
 
 The basic operation principle of the proposed Conversation Assistant can be described as follows: First, the speech of the speaker(s) is picked up with a microphone. This can be for example the build-in microphone of a users device, or an external microphone, preferably close to the speaker for improved signal-to-noise ratio and ASR performance. The speech input is then converted into text by an automatic speech recognition system. Finally, the recognition result is displayed on a screen for the user or users. All of these basic components can be separate from each other, or integrated into one device. The resulting text can be displayed with special visual formatting depending on additional features the system has, such as speaker recognition, enabling visual separation of speech from different speakers. \\\\
 Speech recognition can be a computationally intensive task, and large models can require a lot of disk space as well as memory during operation. As such, most laptop computers can run a speech recognizer locally, but current mobile devices and less powerful computers cannot. Also, it is not practical or sensible that every user would need to download potentially multiple gigabytes of data to their own device in order for the speech recognition to happen on their device locally, even if the computational resources were sufficient. Instead, a server-based solution is needed, where the audio signal is acquired at the end-device and is then send via the internet to a server handling the speech recognition process. The server then simply returns the recognition results as a text string to the device for display. This is the way most ASR systems aimed for general consumers currently work already. The major downside of the server-based implementation is the required internet connection. \\\\
-Mobile devices \cite{mcgraw2016personalized}.
+Mobile devices \cite{mcgraw2016personalized}. \\\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=\textwidth]{implementation.pdf}
+	\caption{The Conversation Assistant system.}
+	\label{fig:system} 
+\end{figure}
 
 \subsection{Implementation}
 
@@ -1054,9 +1063,9 @@ Answers to questions with a \textit{yes or no} answer are visualized in figure \
 \end{figure}
 The first three of these questions were from the introduction section's background questionnaire (Q5, Q6, Q8), and the fourth from the debriefing section (Q32). All test participants owned a smartphone, and a little over half owned a tablet (five out of nine).
 
-\subsection{Numerical values}
+\subsection{Numerical ratings}
 
-The numerical data obtained, i.e., the numerical ratings given by the test participants, are presented with a box plot for each question, divided by the section. The actual numbers given by the test participants for each question are included in appendix \ref{sec:answers}, and the MATLAB code in appendix \ref{sec:matlab}. In the box plots, the (red) central mark represents the median value. The bottom of the box (in blue) corresponds to the 25th percentile, and the top of the box to the 75th percentile. It should be noted that when the median is not centered in the box, it shows sample skewness, meaning the values are distributed asymmetrically. The lines (in black) extending from the box display the range of all values that are not considered outliers. A value is judged to be an outlier and marked with a red cross if it is more than 1,5 times the interquartile range (i.e., the size of the box) away from the top or bottom of the box. \cite{boxplot} \\\\
+The numerical data obtained, i.e., the numerical ratings given by the test participants, are presented with a box plot for each question, divided by the section. The actual numbers given by the test participants for each question are included in appendix \ref{sec:answers}. In the box plots, the (red) central mark represents the median value. The bottom of the box (in blue) corresponds to the 25th percentile, and the top of the box to the 75th percentile. It should be noted that when the median is not centered in the box, it shows sample skewness, meaning the values are distributed asymmetrically. The lines (in black) extending from the box display the range of all values that are not considered outliers. A value is judged to be an outlier and marked with a red cross if it is more than 1,5 times the interquartile range (i.e., the size of the box) away from the top or bottom of the box. \cite{boxplot} \\\\
 Figure \ref{fig:results1} presents the data from the background questionnaire, which consists only of one question measuring the self-perceived proficiency with computers and mobile devices. 
 \begin{figure}[b!]
 	\centering
@@ -1115,7 +1124,7 @@ Figure \ref{fig:results4} presents the results for how much the participants wou
 
 \subsection{Verbal feedback}
 
-\subsection{Analysis}  
+\subsection{Analysis}
 
 One factor to keep in mind when analyzing the results is that the people who participated in the testing showed enough interest towards the Conversation Assistant to take part in the testing, meaning the test participants have to be viewed as inherently biased in some small degree towards the application. It seems probable that someone with no interest towards this type of assistive application would most probably not participate in testing it either.
 
@@ -1137,7 +1146,7 @@ An assistive application like the presented Conversation Assistant prototype cou
 
 More testing. Better models for conversation speech. As they say: "There's no data like more data." \\\\
 Group testing. \\\\
-How useful depending on level of hearing impairment! \\\\
+How useful depending on level of hearing impairment! \\\\dr
 Web and mobile application, server-based recognizer. \\\\
 Microphone methods: access other peoples mobile devices in meetings. Beamforming and directional long range mics. \\\\
 Speaker diarization. \\\\
@@ -1281,43 +1290,43 @@ The raw data from the user tests is included here. Each set of answers is identi
 
 \clearpage
 
-\section{MATLAB Code} \label{sec:matlab}
+%\section{MATLAB Code} \label{sec:matlab}
 
-This section presents the MATLAB scripts created for analyzing the user test results and producing most of the figures presented in this thesis.
+%This section presents the MATLAB scripts created for analyzing the user test results and producing most of the figures presented in this thesis.
 
-\lstset{
-	language=matlab,
-	basicstyle=\ttfamily\scriptsize, % \tiny 
-	inputencoding=utf8,
-	extendedchars=true,
-}
+%\lstset{
+%	language=matlab,
+%	basicstyle=\ttfamily\scriptsize, % \tiny 
+%	inputencoding=utf8,
+%	extendedchars=true,
+%}
 
-\subsection*{results.m}
-\vspace{-4mm}
-\lstinputlisting{results.m}
-\vspace{8mm}
-\subsection*{audiosignal.m}
-\vspace{-4mm}
-\lstinputlisting{audiosignal.m}
-\vspace{8mm}
-\subsection*{bformat.m}
-\vspace{-4mm}
-\lstinputlisting{bformat.m}
-\vspace{8mm}
-\subsection*{cepstrum.m}
-\vspace{-4mm}
-\lstinputlisting{cepstrum.m}
-\vspace{8mm}
-\subsection*{gmm.m}
-\vspace{-4mm}
-\lstinputlisting{gmm.m}
-\vspace{8mm}
-\subsection*{filterbank.m}
-\vspace{-4mm}
-\lstinputlisting{filterbank.m}
-\vspace{8mm}
-\subsection*{loudness.m}
-\vspace{-4mm}
-\lstinputlisting{loudness.m}
+%\subsection*{results.m}
+%\vspace{-4mm}
+%\lstinputlisting{results.m}
+%\vspace{8mm}
+%\subsection*{audiosignal.m}
+%\vspace{-4mm}
+%\lstinputlisting{audiosignal.m}
+%\vspace{8mm}
+%\subsection*{bformat.m}
+%\vspace{-4mm}
+%\lstinputlisting{bformat.m}
+%\vspace{8mm}
+%\subsection*{cepstrum.m}
+%\vspace{-4mm}
+%\lstinputlisting{cepstrum.m}
+%\vspace{8mm}
+%\subsection*{gmm.m}
+%\vspace{-4mm}
+%\lstinputlisting{gmm.m}
+%\vspace{8mm}
+%\subsection*{filterbank.m}
+%\vspace{-4mm}
+%\lstinputlisting{filterbank.m}
+%\vspace{8mm}
+%\subsection*{loudness.m}
+%\vspace{-4mm}
+%\lstinputlisting{loudness.m}
 
 \end{document}

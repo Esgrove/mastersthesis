@@ -3,6 +3,8 @@
 %  2017
 
 screen = get(0,'screensize'); 
+pos    = [-1.2 0 20 9.5]; 
+size   = [17.5 9.5];
 
 % read audio
 [x, Fs] = audioread('kaakko.wav'); % /a/
@@ -54,7 +56,7 @@ Xhatf = Xhatf(1:index); f = f(1:index);   % drop values over Fs/2
 
 % plot
 figure('Position',[screen(3)/2-600, screen(4)/2-300, 1200, 600]);
-plot(f, Xhatf,'linewidth', 0.4); grid on; hold on;
+plot(f, Xhatf,'linewidth', 0.5); grid on; hold on;
 
 w = [48 12];
 for n = 1:2
@@ -63,7 +65,7 @@ for n = 1:2
     f     = 0:f0:(nfft-1)*f0;                   % frequency vector
     index = find(f >= Fs/2, 1);                 % index for freq Fs/2x
     Xhatf = Xhatf(1:index); f = f(1:index);     % drop values over Fs/2
-    h = plot(f, Xhatf,'linewidth', 0.4 + n*0.2);
+    h = plot(f, Xhatf,'linewidth', 0.5 + n*0.1);
 end
 set(h, 'Color', 'Black');
 
@@ -74,6 +76,6 @@ axis([0 4000 -0.1 2.1]);
 set(gca,'YTick', 0:0.5:2);
 set(gca,'XTick', [0 500 1000 1500 2000 2500 3000 3500 4000]);
 set(gcf,'PaperUnits','centimeters',...
-        'PaperPosition', [-1.2 0.1 20 10],...
-        'PaperSize',     [17.8 9.9]);
+        'PaperPosition', pos,...
+        'PaperSize',     size);
 print(gcf, '.\figures\cepstrum', '-dpdf', '-painters');
