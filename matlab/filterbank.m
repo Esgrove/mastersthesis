@@ -13,6 +13,7 @@ MinF = min(mf);
 MaxF = max(mf); 
 MelBinWidth = (MaxF - MinF)/(n+1);
 
+% construct filters
 melfilter = zeros(n, length(mf));
 for i = 1:n
     % find window start and end point
@@ -23,12 +24,10 @@ for i = 1:n
 end
 melfilter = sparse(melfilter); % don't store all the zeroes...
 
-figure('Position', [screen(3)/2-500, screen(4)/2-300, 1000, 600]);
-
-plot(f, melfilter, 'LineWidth', 0.6); grid on; hold on;
-plot([0 4000],[0 0],'Color','black','LineWidth', 0.8);
-
-% set limits and labels
+% plot
+figure('Position', [screen(3)/2-500, screen(4)/2-300, 1000, 600]); 
+plot(f, melfilter,'Color',[0 0.4470 0.7410],'LineWidth',0.7); hold on;
+plot([0 4000],[0 0],'Color','black', 'LineWidth',0.7); grid on; 
 set(gca,'xlim',[0 4000]);
 xlabel('Frequency (Hz)')
 axis([0 4000 0 1.05]);
