@@ -141,8 +141,6 @@ class DemoApp(object):
 
         new_text = hyp.replace("+ +", "").replace("+", "")
         if (len(new_text) > 1):
-
-            #print(new_text)
             if (hyp[0] is "+"):
             	# go back one char
                 ins = self.textbuf_partial.get_cursor()
