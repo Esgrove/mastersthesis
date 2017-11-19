@@ -4,7 +4,7 @@
 
 % figure settings
 screen = get(0,'screensize'); 
-figx = 800; figy = 600;
+figx = 800; figy = 500;
 pos = [screen(3)/2-figx/2, screen(4)/2-figy/2, figx, figy]; 
 
 small_pos  = [-0.6 0.1 12 8]; 
@@ -147,7 +147,7 @@ set(h,'LineWidth',0.7);
 axis([0.5 2.5 0.5 7.5]);
 set(gca,'YTick',1:7);
 set(gca,'XTick',1:8);
-set(gca,'XTickLabel',{'Q22','Q23'});
+set(gca,'XTickLabel',{'Q22','Q24'});
 ylabel('Rating');
 xlabel('Question');
 set(gca,'YGrid','on');
@@ -222,6 +222,68 @@ set(gcf,'PaperUnits','centimeters',...
         'PaperPosition', pie_pos,...
         'PaperSize',     pie_size);
 print(gcf, '.\figures\T1_4', '-dpng', '-r600'); 
+
+%% Presentation
+
+r1 =  [T2{2:3,1:9} ; T2{5:6,1:9}];
+r2 =  [T2{7:8,1:9} ; T2{11:12,1:9}];
+r3 =  T2{13:13,1:9};
+
+% section 1
+figure('Position', pos); 
+h = boxplot(flip(r1,1)', 'orientation', 'horizontal'); 
+set(h,'LineWidth',0.7);
+axis([0.5 7.5 0.5 4.5]);
+set(gca,'XTick',1:7);
+set(gca,'YTick',1:4);
+set(gca,'YTickLabel',{'4','3','2','1'});
+xlabel('Rating');
+title('Section 1');
+set(gca,'XGrid','on');
+%print(gcf, '.\figures\r1', '-dpng'); 
+
+% section 2
+figure('Position', pos); 
+h = boxplot(flip(r2,1)', 'orientation', 'horizontal');
+set(h,'LineWidth',0.7);
+axis([0.5 7.5 0.5 4.5]);
+set(gca,'XTick',1:7);
+set(gca,'YTick',1:4);
+set(gca,'YTickLabel',{'4','3','2','1'});
+xlabel('Rating');
+title('Section 2');
+set(gca,'XGrid','on');
+%print(gcf, '.\figures\r2', '-dpng'); 
+
+% debrief
+figure('Position', pos); 
+h = boxplot(r3', 'orientation', 'horizontal');
+set(h,'LineWidth',0.7);
+axis([0.5 7.5 0.5 1.5]);
+set(gca,'XTick',1:7);
+xlabel('Rating');
+title('Debriefing');
+set(gca,'XGrid','on');
+%print(gcf, '.\figures\r3', '-dpng'); 
+
+%% Comparison
+
+r1 =  [T2{2:6,1:9}];
+r2 =  [T2{7:9,1:9} ; T2{11:12,1:9}];
+
+figure('Position', pos); 
+axis([-inf inf 0.5 7.5]);
+h = boxplot([r1 ; r2]', {{'1' '2' '3' '4' '5' '1' '2' '3' '4' '5'},...
+    {'Q11','Q12','Q13','Q14','Q15','Q16','Q17','Q18','Q20','Q21'}},...
+    'Labels',{'Q11','Q16','Q12','Q17','Q13','Q18','Q14','Q20','Q15','Q21'},...
+    'factorsep',1,'factorgap',2);
+set(h,'LineWidth',0.7);
+ylabel('Rating');
+set(gca,'YGrid','on');
+set(gcf,'PaperUnits','centimeters',...
+        'PaperPosition', big_pos,...
+        'PaperSize',     big_size);
+print(gcf, '.\figures\comparison', '-dpdf', '-painters'); 
 
 %% end
 close all;
