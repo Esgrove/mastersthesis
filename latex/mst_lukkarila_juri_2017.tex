@@ -21,9 +21,10 @@
   pdfkeywords={speech recognition}}
 
 % Extended equation and symbol functionality
-\usepackage{amsfonts,amssymb,amsbsy}
-\usepackage{amsmath}
-\usepackage{bm}    % bold math \bm{math expression}
+\usepackage{amsfonts,amssymb,amsbsy,amsmath}
+
+% bold math \bm{math expression}
+\usepackage{bm}    
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -65,8 +66,8 @@
 \usepackage{textcomp}
 \usepackage{multicol}
 
-% MATLAB formatting
-\usepackage{mcode}		% matlab code highlighting
+% matlab code highlighting
+\usepackage{mcode}		
 
 % for python code, add --shell-escape to pdflatex command
 \usepackage{minted} 		
@@ -185,27 +186,27 @@ Finally, I would like to thank Siiri for all the support and motivation. \\
 
 {\setlength{\tabcolsep}{6mm}
 \begin{tabular}{ll}
-ASR         	 & Automatic speech recognition \\
-AVSR			& Audio-visual speech recognition \\
-DNN				& Deep neural network \\
-DSP				& Digital signal processing \\
-FST				& Finite-state transducer \\
-GPGPU 		  	& General-purpose computing on graphics processing units \\
-GUI      		  & Graphical user interface \\
-HCI  			  & Human-computer interaction \\
-HMM   			& Hidden Markov model \\
-LER				 & Letter error rate \\
-LVCSR 		   & Large vocabulary continuous speech recognition \\
-MFCC  		   & Mel-frequency cepstral coefficient \\
-OS				& Operating system \\
-PCM  		    & Pulse-code modulation \\
-RNN				& Recurrent neural network \\
-SNR				 & Signal-to-noise ratio \\
-SPL				 & Sound pressure level \\
-STT					& Speech-to-text \\
-UI	       		   & User interface \\
-WER    			& Word error rate \\
-WFST		  & Weighted finite-state transducer
+	ASR         & Automatic speech recognition \\
+	AVSR		& Audio-visual speech recognition \\
+	DNN			& Deep neural network \\
+	DSP			& Digital signal processing \\
+	FST			& Finite-state transducer \\
+	GPGPU 		& General-purpose computing on graphics processing units \\
+	GUI      	& Graphical user interface \\
+	HCI  		& Human-computer interaction \\
+	HMM   		& Hidden Markov model \\
+	LER			& Letter error rate \\
+	LVCSR 		& Large vocabulary continuous speech recognition \\
+	MFCC  		& Mel-frequency cepstral coefficient \\
+	OS			& Operating system \\
+	PCM  		& Pulse-code modulation \\
+	RNN			& Recurrent neural network \\
+	SNR			& Signal-to-noise ratio \\
+	SPL			& Sound pressure level \\
+	STT			& Speech-to-text \\
+	UI	       	& User interface \\
+	WER    		& Word error rate \\
+	WFST		& Weighted finite-state transducer
 \end{tabular}}
 
 \vspace{5mm}
@@ -216,13 +217,13 @@ WFST		  & Weighted finite-state transducer
 \begin{tabular}{ll}
 	$\displaystyle \prod_{n}^{N} a_{n} $ & Product from $n$ to $N$, \ $a_n a_{n+1} \dots a_{N}$ \\
 	$C(\bm{W})$			& Frequency count for word sequence $\bm{W}$ \\
-	$f$              	 & Frequency [Hz] \\
+	$f$              	& Frequency [Hz] \\
 	$m$					& Frequency [mel] \\
-	$\bm{O}$		& Observation sequence (vector) \\
-	$P(\bm{W})$   & Probability for the occurence of word sequence $\bm{W}$ \\
-	$P(w_i|h)$       & Probability for the occurence of word $w_i$, given word history $h$ \\
+	$\bm{O}$			& Observation sequence (vector) \\
+	$P(\bm{W})$  		& Probability for the occurence of word sequence $\bm{W}$ \\
+	$P(w_i|h)$       	& Probability for the occurence of word $w_i$, given word history $h$ \\
 	$ppl$				& Perplexity measure \\
-	$\bm{W}$		& Word sequence (vector)
+	$\bm{W}$			& Word sequence (vector)
 \end{tabular}}
 
 %% Tweaks the page numbering to meet the requirement of the thesis format:
@@ -328,13 +329,13 @@ Humans are normally very good at understanding speech in noise, and can concentr
 	\label{table:hearingloss}
 	\begin{tabular}{@{}lll@{}}
 		\toprule
-		& \textbf{WHO}        & \textbf{EUWG}        							\\ \midrule
-		Severity 	& \multicolumn{2}{l}{Pure Tone Average (dB HL)} 	 \\ \midrule
-		Normal   	& 0-25                		& 0-19                 					\\
-		Mild     		& 26-40               		& 20-39                				\\
-		Moderate 	& 41-60               		& 40-69                				\\
-		Severe   		& 61-80               		& 70-94                				\\
-		Profound 		& $\geqslant$ 81        & $\geqslant$ 95         \\ \bottomrule
+		& \textbf{WHO}  & \textbf{EUWG}        							\\ \midrule
+		Severity 		& \multicolumn{2}{l}{Pure Tone Average (dB HL)} \\ \midrule
+		Normal   		& 0-25                		& 0-19              \\
+		Mild     		& 26-40               		& 20-39             \\
+		Moderate 		& 41-60               		& 40-69             \\
+		Severe   		& 61-80               		& 70-94             \\
+		Profound 		& $\geqslant$ 81        	& $\geqslant$ 95    \\ \bottomrule
 	\end{tabular}
 	\vspace{2mm}
 \end{table}
@@ -436,19 +437,19 @@ m \ = \ 2595 \  \cdot \ \log_{10} \ \left(1 \ + \ \frac{f}{700} \right),
 \end{figure}
 In essence, the cepstrum operator deconvolves the speech signal into a linear combination of a source (excitation signal) and a filter, which can be then separated \cite[p.~306--307]{huang2001spoken}. In the \textit{source-filter} model of speech production, speech is formed by convolving a speaker-dependent excitation with a speaker-independent formant filter. We want to separate the speaker-independent filter part that corresponds to a specific linguistic unit \cite[p.~288--290]{huang2001spoken}. For an idealized case, this can be represented mathematically in the following way: Speech is modeled as the combination of a sound source (vocal chords) $e(n)$ and an linear acoustic filter (vocal tract) $h(n)$:
 \begin{equation}
-s(n) \ = \ e(n) * h(n)
+	s(n) \ = \ e(n) * h(n)
 \end{equation}
 The Fourier transform converts a convolution in the time domain into multiplication in the frequency domain:
 \begin{equation}
-S(k) \ = \ F\big\{ \ e(n) * h(n) \ \big\} \ = \ E(k) \cdot H(k)
+	S(k) \ = \ F\big\{ \ e(n) * h(n) \ \big\} \ = \ E(k) \cdot H(k)
 \end{equation}
 Through the properties of logarithms, multiplication can be separated into addition:
 \begin{equation}
-\log S(k) \ = \ \log \big( E(k) \cdot H(k) \big) \ = \ \log E(k) \ + \ \log H(k)
+	\log S(k) \ = \ \log \big( E(k) \cdot H(k) \big) \ = \ \log E(k) \ + \ \log H(k)
 \end{equation}
 A linear combination of the source and filter are then obtained with an inverse Fourier transform, which is a linear operation itself:
 \begin{equation}
-c(n) \ = \ F^{-1} \big\{ \log E(k) \ + \ \log H(k) \big\} \ = \ F^{-1} \big\{\log  E(k) \big\} \ + \ F^{-1} \big\{\log H(k) \big\}
+	c(n) \ = \ F^{-1} \big\{ \log E(k) \ + \ \log H(k) \big\} \ = \ F^{-1} \big\{\log  E(k) \big\} \ + \ F^{-1} \big\{\log H(k) \big\}
 \end{equation}
 In practice, the separation does not work perfectly, as the source-filter model is already a simplification in itself. However, it is often an accurate enough approximation for practical usage \cite[p.~314]{huang2001spoken}. The separation can be done with linear band-pass filtering, referred to as \textit{liftering} in the cepstral domain. In practice, this can be achieved by applying a rectangular window to the cepstrum. Functionally, this is the same as simply dropping the coefficients outside the filter pass-band. Truncating the cepstral coefficients, i.e., taking only the $n$ first coefficients, isolates the speaker-independent filter, meaning the spectral envelope displaying the formants of a speech signal. A traditional number of coefficients used is 12 \cite{huang2001spoken, gales2008application}. Conversely, the higher cepstral coefficients describe the primarily speaker-dependent excitation characteristics, corresponding to the spectral fine structure \cite{gales2008application}. The effect of cepstral truncation on the spectrum is illustrated in figure \ref{fig:cepstrum}.
 \begin{figure}[h]
@@ -502,15 +503,15 @@ The \textit{lexicon} functions as a bridge between the acoustic model and the la
 The \textit{language model} contains information on how words are used to form meaningful sentences in a particular language. Instead of grammatical rules about what combinations are theoretically possible, the language model tells which words typically go together and how often they are used. Specifically, it gives the likelihood for the occurrence of a specific word sequence, which is estimated from large collections of suitable written text called a \textit{text corpus} \cite{kallasjoki2016}. Thus, the language model can be used to choose the most probable word sequence from multiple similar sounding candidates suggested by the acoustic model. Take for example the words \textit{beer} and \textit{bear}, which sound fairly similar to each other. While the sentence \textit{"one bear please"} is grammatically correct and quite possible, it is typically much more likely that \textit{"one beer please"} was uttered instead. The language model will likely assign a higher probability to the phrase \textit{"one beer please"} (depending obviously on the data it was trained with). This way, verbal context is provided for the recognition task, sorting the different hypotheses according to which are sensible and commonly used. The language model can also be used to efficiently reduce and rule-out unwanted and incorrect sentences, as word sequences with a probability of zero cannot be recognized. \\\\
 Mathematically, the language model can be presented in the following way: Let $\bm{W} = w_1, w_2, w_3,\dots,w_n$ be a word sequence. The objective of the language model is to estimate the probability $P(\bm{W}) \ = \ P(w_1, w_2, w_3,\dots,w_n)$, the likelihood of that specific word sequence appearing in a particular language. Applying the chain rule of probability gives:
 \begin{equation}
-P(\bm{W}) \ = \ P(w_1) P(w_2|w_1) P(w_3|w_1,w_2) \dots P(w_n|w_1,\dots,w_{n-1})
+	P(\bm{W}) \ = \ P(w_1) P(w_2|w_1) P(w_3|w_1,w_2) \dots P(w_n|w_1,\dots,w_{n-1})
 \end{equation}
 This means that the conditional probability $P(w_i|w_1,w_2,\dots,w_{i-1})$ must be estimated for every word $w_i$, which is generally done using \textit{maximum likelihood estimation} \cite{arisoy2008statistical}. The estimate can be calculated as the ratio of the occurrences of the word sequences $w_1,w_2,\dots,w_{i-1},w_i$ and $w_1,w_2,\dots,w_{i-1}$:
 \begin{equation} \label{eq:ml}
-P(w_i|w_1,w_2,\dots,w_{i-1}) \ = \ \frac{C(w_1,w_2,\dots,w_{i-1},w_i)}{C(w_1,w_2,\dots,w_{i-1})},
+	P(w_i|w_1,w_2,\dots,w_{i-1}) \ = \ \frac{C(w_1,w_2,\dots,w_{i-1},w_i)}{C(w_1,w_2,\dots,w_{i-1})},
 \end{equation}
 where $C(\bm{W})$ is the frequency count of a word sequence $\bm{W}$ in a large text corpus. Due to data sparsity, this estimate has traditionally been too unreliable for long word sequences \cite{gales2008application}. As an approximation, a word $w_i$ can be assumed to depend only on a limited number of previous words. This is the \textit{n-gram model}, where the conditional probability is truncated to depend only on the $n-1$ preceding words:
 \begin{equation}
-P(w_i|w_1,w_2,\dots,w_{i-1}) \ \approx \ P(w_i|w_{i-n+1},\dots,w_{i-2},w_{i-1}),
+	P(w_i|w_1,w_2,\dots,w_{i-1}) \ \approx \ P(w_i|w_{i-n+1},\dots,w_{i-2},w_{i-1}),
 \end{equation}
 with $n$ ranging typically from two to four \cite[p.~210]{gales2008application}. The n-gram model has been the preferred way to construct language models for a long time \cite{gales2008application, kallasjoki2016, hirsimaki2009importance}. In practice, the n-gram probabilities estimated with equation (\ref{eq:ml}) need to be balanced, since n-grams that are present in the training material tend to get a too high probability and unseen sequences a too low probability. This process is called language model \textit{smoothing}, and can be achieved by distributing some probability mass from seen n-gram combinations to all unseen n-grams \cite{gales2008application}. \\\\
 In recent years, \textit{recurrent neural networks} (RNN) have been shown to work well for language modeling \cite{enarvi2017automatic}. Due to the recurrent connections enabling arbitrarily long context information in the network, RNN language models can capture the long-term dependencies ignored by the simple n-gram model \cite{enarvi2017automatic, mansikkaniemi2017continuous}. Neural network language models overcome the data sparsity problem by projecting words into continuous space, where the probabilities are then estimated \cite{mansikkaniemi2017continuous}. While neural network language models offer improved performance for many applications, training them requires a great deal more computational resources compared to n-gram models, with the training time typically measured in days or even weeks on high-end GPUs. Memory consumption of state-of-the-art neural networks can be an issue as well on currently available GPU hardware \cite{enarvi2017automatic}. Also, the recognition speed is typically slow. \\\\
@@ -539,7 +540,7 @@ WER \ = \ \frac{S + D + I}{N} \cdot 100\%,
 where $S$ is the number of substitutions, $D$ is the number of deletions, $I$ is the number of insertions and $N$ is the total number of words in the reference text. Essentially, it is the \textit{Levenshtein distance} for words, describing the total percentage of word errors. It should be noted that it is possible for the error rate to exceed $100\%$, as the number of insertions is not limited. WER is the most widely used metric for evaluating and comparing the speech recognition accuracy of ASR systems \cite{huang2001spoken, kallasjoki2016}. For agglutinative languages such as Finnish, the WER can be a too harsh measure: Many words are formed by adding affixes to a base word, resulting in a large amount of very similar sounding words with only a slight difference in their meaning. While technically incorrect, recognition errors of one or two characters in these words will most likely not hinder the understandability as much as the WER indicates. The \textit{letter error rate} (LER) can be used as an alternative to the WER, giving a more accurate metric for agglutinative languages \cite[p.~41--42]{kallasjoki2016}. In LER, the Levenshtein distance is simply calculated for individual letters instead of full words. Other measures can be used as well, particularly for measuring very specific types of errors or special vocabulary words, such as the error rate of foreign names or acronyms \cite{mansikkaniemi2017continuous}. Suitable text error measures for the Conversation Assistant are discussed in section \ref{sec:loppu}. \\\\
 For evaluating language models, the \textit{perplexity} measure is commonly used \cite{mansikkaniemi2017continuous}. Perplexity measures how accurately a statistical model predicts a sample. In the case of the language model, this translates to how well the language model predicts a word sequence in an evaluation text sample. Perplexity is calculated by
 \begin{equation}
-ppl \ = \ \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i|h)}},
+	ppl \ = \ \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i|h)}},
 \end{equation}
 where $P(w_i|h)$ is the probability of a word sequence given by the language model and $N$ the number of words in the evaluation text. Minimizing perplexity corresponds to maximizing probability, meaning that a lower perplexity value is better \cite{mansikkaniemi2017continuous}.
 
@@ -758,14 +759,14 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
 \setlist[questionnaire]{label=\textbf{\arabic*.}, leftmargin=1.1cm, labelsep=-0.2cm, align=left, itemsep=2.5mm}
 % settings for tasks 
 \settasks{
-	label-align 	    = left,
-	label-width        = 0em,
-	label-offset       = 0em,
-	item-indent       = 0em,
-	column-sep       = -4em,
-	item-format       = \textit,
+	label-align    = left,
+	label-width    = 0em,
+	label-offset   = 0em,
+	item-indent    = 0em,
+	column-sep     = -4em,
+	item-format    = \textit,
 	counter-format = (tsk[a]),
-	debug 		         = false
+	debug 		   = false
 }
 { \footnotesize % smaller font for whole list
 	\noindent
