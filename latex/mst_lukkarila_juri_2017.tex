@@ -29,7 +29,7 @@
 \usepackage{amsfonts,amssymb,amsbsy,amsmath}
 
 % bold math \bm{math expression}
-\usepackage{bm}    
+\usepackage{bm}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -38,13 +38,13 @@
 \usepackage{booktabs}
 
 % nice frac
-\usepackage{units}  
-            
-% smooth font           
-\usepackage{lmodern} 
+\usepackage{units}
 
-% eps graphics support  
-\usepackage{epstopdf}           
+% smooth font
+\usepackage{lmodern}
+
+% eps graphics support
+\usepackage{epstopdf}
 
 % New fonts based on Aalto
 \usepackage{fouriernc}
@@ -57,7 +57,7 @@
 \renewcommand{\baselinestretch}{1.02}
 
 % Formatting for captions
-\usepackage[hang, bf, justification=justified, format=plain, labelfont={bf,it}, textfont=it]{caption} 
+\usepackage[hang, bf, justification=justified, format=plain, labelfont={bf,it}, textfont=it]{caption}
 \usepackage{subcaption}
 
 % Other
@@ -72,15 +72,15 @@
 \usepackage{multicol}
 
 % matlab code highlighting
-\usepackage{mcode}      
+\usepackage{mcode}
 
 % for python code, add --shell-escape to pdflatex command
-\usepackage{minted}         
+\usepackage{minted}
 
 % Questionnaire list
 \usepackage{tasks}
 \usepackage[inline]{enumitem}
- 
+
 % Custom red color
 \definecolor{pun}{RGB}{205,5,5}
 
@@ -88,7 +88,7 @@
 \graphicspath{{./}{figures/}}
 
 % Set stuff for autoref
-\addto\extrasenglish{ 
+\addto\extrasenglish{
     \def\figureautorefname{Fig.}
     \def\subfigureautorefname{Fig.}
     \def\tableautorefname{Table}
@@ -100,7 +100,7 @@
 }
 
 \begin{document}
-    
+
 \pagenumbering{Roman}  % uppercase letters
 
 \university{Aalto University}
@@ -134,7 +134,7 @@
 \makecoverpage
 
 %% Do not count coverpage
-\setcounter{page}{1} 
+\setcounter{page}{1}
 
 \keywords{speech recognition, software engineering, user-centered design, user testing}
 
@@ -159,7 +159,7 @@ Keskustelupuheen ymmärtäminen ja keskusteluihin osallistuminen on raportoitu y
 
 Työssä kehitettiin ja arvioitiin apusovellusta keskustelupuheen ymmärtämisen ja keskusteluihin osallistumisen helpottamiseksi. Sovellus käyttää automaattista puheentunnistusta reaaliaikaiseen puheen tekstittämiseen kuuroja ja huonokuuloisia varten. Menetelmän toimivuuden vahvistamiseksi ja sen hyödyllisyyden tutkimiseksi siitä kehitettiin prototyyppisovellus käyttäjätestausta varten avointa lähdekoodia hyödyntäen. Testaamista varten suunniteltiin ja toteutettiin käyttäjäkoe sovelluksen kohderyhmää edustavilla koekäyttäjillä. \\
 
-Saadut tulokset viittaavat siihen, että työssä esitetty Keskusteluavustin on toimiva ja hyödyllinen apuväline huonokuuloisille ja kuuroille. Puheentunnistustarkkuus erityisesti meluisissa olosuhteissa osoittautui ensisijaiseksi kehityskohteeksi apusovelluksen hyödyllisyyden lisäämiseksi. Puheentunnistuksen nopeus arvioitiin puolestaan jo riittävän nopeaksi, ylittäen selkeästi kirjoitustulkkien kirjoitusnopeuden. 
+Saadut tulokset viittaavat siihen, että työssä esitetty Keskusteluavustin on toimiva ja hyödyllinen apuväline huonokuuloisille ja kuuroille. Puheentunnistustarkkuus erityisesti meluisissa olosuhteissa osoittautui ensisijaiseksi kehityskohteeksi apusovelluksen hyödyllisyyden lisäämiseksi. Puheentunnistuksen nopeus arvioitiin puolestaan jo riittävän nopeaksi, ylittäen selkeästi kirjoitustulkkien kirjoitusnopeuden.
 \end{abstractpage}
 
 \newpage
@@ -181,7 +181,7 @@ Finally, I would like to thank Siiri for all the support and motivation. \\
 %% Force new page after preface
 \newpage
 
-%% Table of contents. 
+%% Table of contents.
 \thesistableofcontents
 
 %% Symbols and abbreviations
@@ -234,7 +234,7 @@ Finally, I would like to thank Siiri for all the support and motivation. \\
 %% Tweaks the page numbering to meet the requirement of the thesis format:
 %% Begin the pagenumbering in Arabian numerals (and leave the first page
 %% of the text body empty, see \thispagestyle{empty} below).
-%% Additionally, force the actual text to begin on a new page with the 
+%% Additionally, force the actual text to begin on a new page with the
 %% \clearpage command.
 %% \clearpage is similar to \newpage, but it also flushes the floats (figures and tables).
 %% There is no need to change these
@@ -259,11 +259,11 @@ As a consequence, automatic speech recognition has gained a great deal of popula
 Returning to the spoken communication problems hearing impaired people encounter, having automatic real-time transcriptions of speech always available could potentially be extremely helpful in many of these problematic situations. Realizing this type of system offers a challenging, but well-defined practical application of modern speech recognition technology to a concrete problem. The goal of this work was to develop and test a conversational assistance application aimed for deaf and hard of hearing individuals, which translates speech into text in real time using automatic speech recognition. The intended purpose of this assistive application, henceforth referred to as the \textit{Conversation Assistant}, is to help and support hearing impaired persons in conversations and other situations where they are being spoken to, such as meetings, lectures and school classrooms. It is not intended to fully replace other personal assistive devices like hearing aids, but instead to supplement them. \\\\
 The basic operation principle of the proposed Conversation Assistant is illustrated in figure \ref{fig:assistant}, which presents a typical conversational scenario where the Conversation Assistant could be used.
 \begin{figure}[b]
-    \centering 
+    \centering
     \includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=\textwidth]{assistant3.pdf}
     \caption{The operation principle and an example use case for the Conversation Assistant. In the illustration, the person on the left is speaking. The person on the right uses the Conversation Assistant, which converts the speech into text in real-time.}
-    \label{fig:assistant} 
-\end{figure} 
+    \label{fig:assistant}
+\end{figure}
 Ideally, the Conversation Assistant could be used with any applicable smart device the user already owns, as long as the basic requirements are met. The Conversation Assistant method is described in detail in section \ref{sec:implementation}. Using automatic speech recognition technology to support deaf and hard of hearing individuals in some form or capacity has been proposed and tested already previously \cite{robison1996computer, kheir2007inclusion, mirzaei2012combining}. However, many of these studies have focused only on some particular setting or situation, such as school classrooms, or have otherwise been limited in their scope. Also, automatic speech recognition technology has matured considerably during this decade, meaning that the findings of many earlier studies might not be accurate any longer. A similar communication aid using Finnish speech recognition was investigated by Karjalainen et al. already in 1997. However, to the extend of our knowledge, no implementations of an application like the Conversation Assistant are currently available for the Finnish language.
 
 \subsection{Problems With Current Solutions}
@@ -285,7 +285,7 @@ A lot of research and progress has been made on improving automatic speech recog
     \begin{itemize}[align=left,  leftmargin=0.52cm, labelsep=-0.18cm, itemsep=2mm]
         \item Is the Conversation Assistant a viable concept, and feasible for practical implementation and use?
         \item How the application can, and should be implemented?
-        \item What are the main factors for improving its usefulness? 
+        \item What are the main factors for improving its usefulness?
         \item Is there commercial potential for it? \\
     \end{itemize}
 \end{enumerate}
@@ -311,17 +311,17 @@ Hearing impairment can be defined as having a reduced or deficient hearing abili
 Clinically, hearing loss can be divided into two main categories based on the physiological cause \cite{moore2007cochlear, deafness}: Conductive hearing loss is a result of abnormalities in the outer ear or in the ossicles in the middle ear, with the effect that sound is not properly transmitted to the inner ear. Sensorineural hearing loss results from a malfunction of the inner ear or the auditory nerve, meaning that the problem is in converting sound vibration into neural impulses and transmitting them to the auditory cortex of the brain. For example, damage to the hair cells in the cochlea is a common form of sensorineural hearing loss \cite{moore2007cochlear}. The anatomy of the ear is presented in figure \ref{fig:ear}, describing the parts belonging to the outer, middle, and inner ear. \\\\
 The overwhelming majority of all hearing impairments are of the sensorineural type, with age-related hearing loss, or \textit{presbycusis}, being the most common cause, followed by noise-induced hearing loss \cite{koskela2013kuulokojeen}. It is possible to have a combination of both conductive and sensorineural hearing defects as well. Another significant division for hearing loss and its treatment is the age of onset in relation to speech acquisition \cite{raino2012sisakorvaistutteen, deafness}: Prelingual hearing loss is present before language acquisition, meaning it is either congenital (present at birth) or develops soon after. Postlingual hearing loss occurs after the development of speech and language. This distinction is important since deafness and hearing loss can significantly affect the language acquisition of children, a fundamental part of general cognitive development \cite{moore2007cochlear, wilson2017global, raino2012sisakorvaistutteen}.
 \begin{figure}[t]
-    \centering 
+    \centering
     \includegraphics[width=\textwidth]{ear.pdf}
     \caption{Anatomy of the ear. The outer ear consists of the pinna and the ear canal, ending to the eardrum (tympanic membrane). The middle ear is a small air-filled cavity containing the ossicles: three tiny bones responsible for transmitting the vibration of the eardrum to the inner ear. The Eustachian tube is a narrow channel connecting the middle ear to the oral cavity, balancing the air pressure inside to the external air pressure. The inner ear houses the cochlea, a spiral-shaped liquid-filled tube containing the basilar membrane, along which the hair cells are positioned. Hair cells convert the vibration of the basilar membrane into neural impulses in the auditory nerve. \cite{moore2007cochlear, pulkki2015communication}}
-    \label{fig:ear} 
+    \label{fig:ear}
 \end{figure} \\
 Audiologically\footnote{Audiology is the scientific study of hearing, including the treatment of hearing defects.}, hearing loss is categorized and its severity ranked according to the increase in the threshold of hearing, i.e., the sound pressure level required for the perceptual detection of sound \cite{moore2007cochlear, pulkki2015communication}. It is measured in decibels and compared to the statistically defined and standardized nominal level of hearing. Human hearing is strongly frequency-dependent, and is most sensitive at frequencies from approximately one to five kilohertz \cite{pulkki2015communication}. Consequently, this frequency range is critical for speech perception and many other everyday tasks. Figure \ref{fig:loudness} presents the equal-loudness contours as they are defined in the ISO 226:2003 standard \cite{iso226}. These contours describe the \textit{sound pressure level} (SPL) required for a pure tone (single frequency sinusoidal waveform) to be judged equally loud depending on the frequency of the tone, illustrating the frequency-dependent sensitivity of hearing \cite{pulkki2015communication}. Notably, the equal-loudness curve for zero phons corresponds to the absolute threshold of hearing. Hearing loss can therefore be technically defined as upward changes to this curve, the frequency-dependent threshold of hearing, that exceed the normal small statistical variation between different people. \\
 \begin{figure}[]
-    \centering 
+    \centering
     \includegraphics[width=\textwidth]{loudness.pdf}
     \caption{Equal-loudness contours as defined in ISO 226:2003. The number associated with each curve is the nominal loudness level in phons, with zero phons corresponding to the nominal threshold of hearing. Sound pressure level is the pressure level compared to the reference value of \ $ \mathit{20 \cdot 10^{-6}}$ Pascals. \cite{iso226}}
-    \label{fig:loudness} 
+    \label{fig:loudness}
 \end{figure} \\
 The level of hearing loss is generally described as a single decibel value, referred to as the \textit{pure tone average} (PTA) \cite{moore2007cochlear, salonen2013hearing}. It is calculated as the average of the hearing thresholds for pure tones at the frequencies of 0,5 kHz, 1 kHz, 2 kHz, and 4 kHz: For each frequency, the threshold of hearing is measured and compared to the reference value, resulting in a decibel value, which are then averaged together to form a single value estimate. Different severity categories have been set up with each category having a corresponding decibel range of the average hearing threshold increase. These decibel ranges vary slightly between countries and organizations \cite{salonen2013hearing}. Table \ref{table:hearingloss} presents two common severity ranks, and the corresponding decibel ranges for the pure tone average used by the \textit{World Health Organization} (WHO) and the \textit{European Working Group on Genetics of Hearing Impairment} (EUWG) \cite{salonen2013hearing}. \\\\
 However, this does not mean that all individuals in the same category or even with the same pure tone average value have the same effective hearing impairment: Difficulties for instance with speech perception can vary widely depending on how much each frequency is affected and the mechanisms causing the hearing loss. People with mild or moderate hearing loss can typically understand speech reasonably well in a quiet room with only one person talking. However, they can begin to have difficulties when more than one person is talking at the same time, or when there is background noise or notable reverberation present \cite{peterson2010cochlear}. People with severe or profound hearing loss usually have difficulties even with understanding a single speaker in a quiet room, and severe problems when background noise is present. In addition to decreased audibility, hearing impairment typically causes additional perceptual difficulties not purely related to the reduced sensitivity \cite{moore2007cochlear}: The frequency resolution of hearing is often also affected, leading to the significant difficulties with speech perception in noisy conditions. \\\\
@@ -357,19 +357,19 @@ According to the WHO Global Burden of Disease study of 2015 \cite{wilson2017glob
 The main technological solutions to hearing loss can be divided into three main categories: hearing aids, cochlear implants, and other assistive devices \cite{moore2007cochlear}. Hearing aids are used in mild to severe cases to augment a reduced hearing ability \cite{moore2007cochlear, levitt2007historical}. A cochlear implant is required when hearing aids cannot help anymore, in cases of profound or total hearing loss \cite{moore2007cochlear, levitt2007historical}. Other assistive devices include both supplementary techniques for hearing augmentation, and a wide variety of methods and gadgets based on visual perception and physical interaction. For additional hearing assistance, the previously mentioned audio induction loop and FM system are the most common and widely used, and many hearing aids and cochlear implants have a build-in receiver for these devices. Examples of the latter category include alarm systems using flashing lights instead of sound for applications such as smoke detectors and door bells. A typical example of an assistive device substituting sound with physical interaction is an alarm clock using vibration for awaking a deaf person \cite{mielke2013assistive}. Hearings aids and cochlear implants are being actively developed, and have improved remarkably during the past few decades, though neither device can match the performance of normally functioning hearing \cite{moore2007cochlear, levitt2007historical, goehring2016speech}. More traditional support methods are still being used as well: Lip reading is utilized by many hearing impaired individuals for understanding speech in conjunction with the modern assistive devices. \\\\
 Hearing aids are used to amplify and modify incoming sound, enhancing and augmenting the user's own compromised hearing \cite{levitt2007historical, salonen2013hearing, fink2008benefit}. Modern devices are based on digital electronics and microprocessors, and come in many different types. The most common variations are the different \textit{in-the-ear} and \textit{behind-the-ear} models. Figure \ref{fig:hearingaids} presents various types of modern hearings aids from one particular manufacturer (Widex). In addition to the simple amplification provided by earlier analog models, modern digital hearing aids utilize real-time \textit{digital signal processing} (DSP) for tasks such as speech enhancement, dynamics processing (compression), filtering, noise reduction, adaptive gain control and feedback cancellation \cite{moore2007cochlear, levitt2007historical, goehring2016speech}. Directional microphone systems are used for improving speech recognition in noise \cite{levitt2007historical}. Modern wireless transmission technology, such as Bluetooth, can be used to easily link hearing aids directly with sound sources like a telephone or television \cite{salonen2013hearing}. Modern hearing aids are personally fitted for each user, matching and compensating for the individual frequency response of the users hearing for best results \cite{moore2007cochlear}. \\
 \begin{figure}[b]
-    \centering 
+    \centering
     \includegraphics[trim={0cm 4cm 0cm 4cm}, clip, width=\textwidth]{hearingaids.png}   % trim={<left> <lower> <right> <upper>}
     \caption{Different types of modern hearing aids: behind-the-ear (back, middle), receiver-in-canal (back, left and rightmost), in-the-canal (front, left) and in-the-ear (front, right). Image source: \href{https://www.widex.pro/en/products/unique-hearing-aids}{\textit{Widex}}}
-    \label{fig:hearingaids} 
+    \label{fig:hearingaids}
 \end{figure} \\
 A cochlear implant is a surgically implanted electronic device that can provide auditory perception to people with severe or profound sensorineural hearing loss, even in the case of complete deafness \cite{moore2007cochlear, peterson2010cochlear}. Cochlear implants bypass the ear altogether by directly stimulating the auditory nerve with electrical signals through electrodes inserted into the cochlea. All implants are comprised of two major elements: The external, detachable parts, and the internal, surgically implanted parts. The external parts are usually removed for activities such as sleeping and bathing \cite{peterson2010cochlear}. \\\\
 Similarly to hearing aids, the audio signal is acquired with an external microphone or picked up wirelessly. The signal is then processed with a speech processor unit typically worn behind the ear. It is transmitted wirelessly through the skin to the internal implant. The internal, implanted part consists of a receiver and the electrodes. The placement of these components is illustrated in figure \ref{fig:implant}, which presents the same anatomic view of the ear as in figure \ref{fig:ear}, but with an added cochlear implant: \\
 \begin{figure}[h]
-    \centering 
+    \centering
     \includegraphics[width=\textwidth]{implant.pdf}
     \vspace{0.5mm}
     \caption{An ear with a cochlear implant. A microphone and speech processor are typically worn behind ear. The speech processor connects to a wireless transmitter attached outside the head. An internal receiver inside the skin connects to the electrodes inserted into the cochlea. \cite{moore2007cochlear, peterson2010cochlear}}
-    \label{fig:implant} 
+    \label{fig:implant}
 \end{figure} \\
 Most cochlear implants are multi-channel, meaning they have multiple electrodes. The input signal is likewise divided into multiple frequency bands with each electrode receiving its own signal \cite{moore2007cochlear, friesen2001speech}. While they do not restore normal hearing sensation, cochlear implants enable speech communication for many recipients and significantly improve the spoken language acquisition for deaf children \cite{stacey2006hearing, raino2012sisakorvaistutteen}: Many congenitally deaf cochlear implant recipients achieve a good speech perception ability and develop near-normal language skills. Post-lingually deafened implant recipients often regain the ability to understand and use spoken language at least to some degree. Cochlear implants have been shown to considerably improve the perceived quality of life for many recipients \cite{blomberg2012sisakorvaistutetta}. \\\\
 Cochlear implants are a relatively new treatment method: In Finland, the first few implants were installed in the mid 80s to adults. The first child was implanted in 1995 and the first congenitally deaf child in 1997 \cite{raino2012sisakorvaistutteen}. Today, the majority of prelingually deaf children are implanted already around the age of one year, as the early age of implantation is strongly associated with successful outcomes \cite{peterson2010cochlear, stacey2006hearing, raino2012sisakorvaistutteen}.
@@ -386,10 +386,10 @@ Employed hearing impaired people have been observed to have noticeable problems 
 
 In this work, the primary interest in automatic speech recognition is for using it in practice, instead of developing or improving upon some aspect of it. Therefore, this section focuses on providing a high-level overview of ASR systems. Likewise, detailed description of machine learning techniques and neural network training methods fall outside this thesis. In this work, speech recognition is described primarily from the point of view of modern large vocabulary continuous speech recognition. \\\\ An automatic speech recognition system takes an audio signal containing speech as an input, and tries to produce the corresponding text representation \cite{huang2001spoken, li2014overview}. Figure \ref{fig:asr} presents the high-level block diagram of a typical speech recognition system, though other configurations are also possible. In practice, the actual implementation can typically contain more complicated connections between the different components, and the models can also be packed together for optimization reasons \cite{yu2014automatic, kallasjoki2016}. The use of deep neural networks has somewhat blurred the line between feature extraction and acoustic modeling \cite{hinton2012deep, kallasjoki2016}.
 \begin{figure}[h]
-    \centering 
+    \centering
     \includegraphics[trim={1.8cm 0cm 1.8cm 0cm}, clip, width=\textwidth]{ASR.pdf}
     \caption{Block diagram for the structure of a typical speech recognition system. The audio input can be a real-time signal from a microphone, or a existing recording or audio track. Depending on the application, the text result can be displayed immediately or saved into a text file.}
-    \label{fig:asr} 
+    \label{fig:asr}
 \end{figure} \\
 At the technical level, automatic speech recognition is a conversion process, where an acoustic data sequence (speech) is converted into a symbolic character sequence (text) \cite{yu2014automatic}. In statistical terms, speech recognition can be categorized as a classification problem among the wider context of general pattern recognition tasks \cite{huang2001spoken}. The speech recognition process can be formulated mathematically in the following way \cite{huang2001spoken, gales2008application, kallasjoki2016}: the goal of the system is to produce the most probable word sequence $ \hat{\bm{W}} = w_1, w_2, w_3,\dots,w_n$, for a given acoustic observation sequence $\bm{O}$. The most probable word sequence corresponding to $\bm{O}$ can be found by maximizing the posterior (i.e., conditional) probability $P(\bm{W} | \bm{O})$:
 \begin{equation} \label{eq:max}
@@ -425,8 +425,8 @@ The input to an ASR system is a digital audio signal, the digitized version of a
         \includegraphics[trim={0.4cm 0cm 0.1cm 0cm}, clip, width=\textwidth]{spectrogram.pdf}
     \end{subfigure}
     \caption{The waveform and corresponding spectrogram of a speech signal containing the words "zero, one, two, three" pronounced in Finnish.}
-    \label{fig:audio} 
-\end{figure} 
+    \label{fig:audio}
+\end{figure}
 An audio signal contains acoustic information, such as the energy and frequency of its components. But in speech recognition, the interest is in the linguistic information. Therefore, the acoustic properties of an audio sample need to be somehow mapped to linguistic information. However, the problem with recognizing speech sounds is that every person has an unique voice, meaning that the same word or sentence spoken by different persons produce widely varying acoustic information contents. These depend for example on the speakers gender, accent, intonation, tone of voice, mood, and characteristic pitch and timbre. The voice of a one specific individual does not stay constant either, and can vary noticeably between different times and situations. Also, in addition to the speech signal of interest, all real-world signals contain some degree of background noise and other unwanted sounds from the recording environment \cite{huang2001spoken}. Therefore, the acoustic properties of a speech sample cannot be used directly for accurate recognition. \\\\
 What is needed are some characteristic measures, or \textit{features}, that can describe and discriminate between different speech sounds, and extract the linguistic information independent of a speaker's personal voice. These features should contain the essential information and measurements needed for classifying speech. \textit{Feature extraction} is then the process of calculating a sequence of these features, a \textit{feature vector}, based on the input audio signal. Ideally, a feature vector should be compact, containing only the necessary information, be robust against noise, as well as fast to calculate so that it can be used in real-time \cite{huang2001spoken}. Consequently, audio signals typically contain a lot of information that is not useful for the recognition task. In feature extraction, the input signal is therefore processed to remove unwanted and redundant information, as well as background noise, while emphasizing the important characteristics for speech recognition. \\\\
 Common preprocessing steps include filtering the signal: The very low and high frequencies can generally be removed as speech is mostly focused between the frequencies from 100 to 4000 Hz, as can be seen in the spectrogram in figure \ref{fig:audio}. The input is often downsampled to a lower sampling rate, effectively removing unnecessary high frequencies as all frequencies above the Nyquist limit are lost. In practice, sampling rates as low as 8 kHz can be used, limiting the highest possible frequency to just 4 kHz, without a noticeably reduced recognition accuracy \cite{huang2001spoken}. A pre-emphasis filter can be used to adjust the spectral tilt \cite{kallasjoki2016}. The signal is divided into partially overlapping frames, typically around 20 to 30 milliseconds in length, meaning the frequency content of each frame can be expected to be fairly stationary \cite{huang2001spoken, gales2008application}. \\\\
@@ -438,7 +438,7 @@ m \ = \ 2595 \  \cdot \ \log_{10} \ \left(1 \ + \ \frac{f}{700} \right),
     \centering
     \includegraphics[trim={0.1cm 0cm 0.1cm 0.5cm}, clip, width=\textwidth]{melfilter_edit.pdf}
     \caption{Mel-scale filter bank with 12 filter bands from 0 to 4000 Hz. Note that in practice the number of filters is typically higher, a low number of filters was used here for a clear illustration.}
-    \label{fig:melbank} 
+    \label{fig:melbank}
 \end{figure}
 In essence, the cepstrum operator deconvolves the speech signal into a linear combination of a source (excitation signal) and a filter, which can be then separated \cite[p.~306--307]{huang2001spoken}. In the \textit{source-filter} model of speech production, speech is formed by convolving a speaker-dependent excitation with a speaker-independent formant filter. We want to separate the speaker-independent filter part that corresponds to a specific linguistic unit \cite[p.~288--290]{huang2001spoken}. For an idealized case, this can be represented mathematically in the following way: Speech is modeled as the combination of a sound source (vocal chords) $e(n)$ and an linear acoustic filter (vocal tract) $h(n)$:
 \begin{equation}
@@ -461,26 +461,26 @@ In practice, the separation does not work perfectly, as the source-filter model 
     \centering
     \includegraphics[trim={0.1cm 0cm 0cm 0.4cm}, clip, width=\textwidth]{cepstrum.pdf}
     \caption{The effect of cepstral truncation on the spectrum of a 30ms frame containing the Finnish phoneme $/a/$. The numbers describe how many cepstral coefficients are being used. As the number of coefficients is lowered, the underlying formant structure becomes clear.}
-    \label{fig:cepstrum} 
+    \label{fig:cepstrum}
 \end{figure} \\
 Additionally, the time varying nature of speech can be captured by taking the time derivatives of the obtained cepstral coefficients of consecutive frames \cite{gales2008application, kallasjoki2016}. The first and second-order differences, referred to as the \textit{delta} and \textit{delta-delta} features respectively, are typically used for modeling the dynamic aspects of speech. The end result is a highly condensed set of features \cite{huang2001spoken, gales2008application}. The next step in the automatic speech recognition process is to map the acoustic speech features produced into linguistic classes, which can then be used to form words. This is were the \textit{acoustic model} comes in.
 
 \subsubsection{Acoustic model}
 
 The \textit{acoustic model} provides a statistical model for classifying feature vectors into units of speech \cite{kallasjoki2016}. One of the practical choices for these classes are the \textit{phonemes} of a particular language. Words or longer phrases could technically be used as well, however, this would lead to a very large number of classes as each word or phrase would require its own class. In written language, all words are formed with a very limited set of alphabetic letters, or \textit{graphemes}. In linguistics, a grapheme is the smallest unit of writing in any given language. For example, the English alphabet consists of 26 letters, and in Finnish 29 letters are used. Similarly, phonemes are the different units of sound that can be used to form all possible words in a particular language \cite[p.~24--25]{huang2001spoken}. For example, English is commonly divided into roughly 45 phonemes, varying slightly between different dialects and interpretations. This is very useful for acoustic modeling, since it means the acoustic model needs only to be trained to recognize this small set of phoneme classes, which can then be used to classify a practically unlimited number of different words. As the pronunciation of a phoneme depends quite heavily on the neighboring phonemes, it is common to actually use the \textit{triphone} for the acoustic class. A triphone is a sequence of three phonemes: one phoneme with the two nearest phonemes, meaning the preceding and succeeding phonemes as context. \\\\
-\textit{Hidden Markov Models} (HMM) have been widely used for implementing the acoustic model \cite{gales2008application, hori2013speech}. Speech is approximated well by a \textit{Markov chain}, a stochastic model for randomly changing systems where the next state depends only on the current state \cite[p.~23--26]{yu2014automatic}. 
+\textit{Hidden Markov Models} (HMM) have been widely used for implementing the acoustic model \cite{gales2008application, hori2013speech}. Speech is approximated well by a \textit{Markov chain}, a stochastic model for randomly changing systems where the next state depends only on the current state \cite[p.~23--26]{yu2014automatic}.
 \begin{figure}[b]
     \centering
     \includegraphics[trim={0.1cm 0cm 0.1cm 0cm}, clip, width=\textwidth]{hmm2.pdf}
     \caption{A three-state, left-to-right HMM diagram. $a_{ij}$ is the transition probability from state $s_i$ to state $s_j$. Each state has an emission probability distribution $b_i$ conditional over the observation sequence $O$.}
-    \label{fig:hmm} 
+    \label{fig:hmm}
 \end{figure}
 The chain consists of discrete states and state changes that are modeled with transition probabilities. In a hidden Markov model, the states cannot be observed directly (hence the term \textit{"hidden"}). Instead, an output that is dependent on the hidden states is known. In speech recognition, an utterance of a phoneme is considered a hidden state that emits an observable representation in the form of a feature vector. A three-state HMM is generally used to model one triphone in a left-to-right topology, meaning the states are constrained to be in chronological order \cite{kallasjoki2016}. Figure \ref{fig:hmm} present a three-state, left-to-right HMM. The probability that an observation is an emission of a specific state needs to be also modeled. For representing the probability distribution of observations, \textit{Gaussian Mixture Models} (GMM) have been a popular choice \cite{gales2008application, hinton2012deep}. Gaussian mixture models are built by linearly combining two or more multivariate Gaussian distributions together. A simplified example of an GMM is illustrated in figure \ref{fig:gmm}.
 \begin{figure}[b]
     \centering
     \includegraphics[trim={0cm 0.2cm 0cm 0.2cm}, clip, width=\textwidth]{gmm2.pdf}
     \caption{A combination of multivariate Gaussian distributions. Note that the scaling is wrong for an actual GMM, as this is only an illustration. A much higher dimensionality is required in reality.}
-    \label{fig:gmm} 
+    \label{fig:gmm}
 \end{figure} \\\\
 Like many other aspects in ASR, GMMs have been surpassed by deep neural networks in recent years \cite{hinton2012deep}. A DNN is an artificial neural network that has two or more layers of hidden units between the inputs and outputs. DNNs are typically feed-forward, meaning data flows from the input layer to the output layer without looping back. They are trained with the \textit{backpropagation} algorithm, where the gradient of a cost function measuring the error between the desired and produced output is propagated back to the network layers \cite[p.~57--60]{yu2014automatic}. Significant improvements to speech recognition accuracy have been achieved by replacing GMMs with DNNs \cite{yu2014automatic, hinton2012deep, xiong2016achieving}. The trend of using deep neural networks for acoustic modeling has somewhat affected the way feature extraction is implemented as well, with feature extraction incorporated as one aspect of the acoustic model: The extraction process can be started with a simple linear or mel-scale spectrum, and producing the final feature representation type is relegated to the DNN, meaning the feature representation can be optimized as a part of training the acoustic model \cite{kallasjoki2016}. The ASR system used in this work is DNN based. A detailed description of the models and their training material is given in section \ref{sec:models}.
 
@@ -536,7 +536,7 @@ Measuring the performance of an ASR system is a critical part of their developme
     \item \textbf{Substitution}: a correct word was replaced with an incorrect word.
     \item \textbf{Deletion}: a correct word was omitted.
     \item \textbf{Insertion}: an extra word was added.
-\end{itemize} 
+\end{itemize}
 \vspace{2mm}
 Based on these, the \textit{word error rate} (WER) is defined as:
 \begin{equation}
@@ -562,7 +562,7 @@ This section reviews briefly the software engineering principles and development
 \subsubsection{Usability} \label{sec:usability}
 
 The concept of usability is essential in the user-centered design philosophy. Usability is sometimes used only in a narrow sense to refer to the quality of an user interface design, but usability should be viewed as much more than that \cite[p.~3]{richter2014user}: The usability of a system should be assessed in the context of its use to, and is used to measure how well the users can achieve the tasks they wish to perform. Good usability means that the users learn to use the software easily, the usage is effective, and they can achieve their intended objectives satisfactorily. The ISO 9241-11 standard defines usability as \textit{"the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use"} \cite[p.~4]{richter2014user}. \\\\
-However, usability should not be considered purely from a functional and objective viewpoint \cite{richter2014user, riihiaho2015}. The \textit{user experience} relating to the user's perceptions and feelings of using a software product or system should be taken into account as well \cite[p.~5--6]{richter2014user}. Hearing impaired individuals, particularly the deaf, form a distinct user group that can have very different needs and abilities compared to most other users \cite{potter2014design, korte2015experience}. These subtle differences in the \textit{human-computer interaction} (HCI) have to be accounted for when designing software and user interfaces specifically for these individuals, in order to make it accessible and usable \cite{savidis2004unified}. Consequently, usability can be divided into the following subcategories \cite[p.~4--5]{rubin2008handbook}: 
+However, usability should not be considered purely from a functional and objective viewpoint \cite{richter2014user, riihiaho2015}. The \textit{user experience} relating to the user's perceptions and feelings of using a software product or system should be taken into account as well \cite[p.~5--6]{richter2014user}. Hearing impaired individuals, particularly the deaf, form a distinct user group that can have very different needs and abilities compared to most other users \cite{potter2014design, korte2015experience}. These subtle differences in the \textit{human-computer interaction} (HCI) have to be accounted for when designing software and user interfaces specifically for these individuals, in order to make it accessible and usable \cite{savidis2004unified}. Consequently, usability can be divided into the following subcategories \cite[p.~4--5]{rubin2008handbook}:
 \begin{multicols}{3}
     \centering
     \begin{itemize}[leftmargin=1.2cm, itemsep=2mm]
@@ -574,7 +574,7 @@ However, usability should not be considered purely from a functional and objecti
         \item Accessibility \\
     \end{itemize}
 \end{multicols} %\vspace{1mm}
-\noindent 
+\noindent
 Usefulness means the degree to which a product enables the users to achieve their goals, and is an assessment of the user's willingness to use the product. Efficiency means how quickly and accurately the user's goals can be achieved. Effectiveness refers to the product working like the user expects, and how easily the user can do what they intend. Learnability refers to the user's ability to learn to use the system, relating closely to effectiveness. Satisfaction refers to the user's perceptions and feelings towards using the product. Accessibility means making the product usable for people with disabilities, which usually has the added benefit of improving it for all others as well.
 
 \subsubsection{User-centered design} \label{sec:user}
@@ -589,12 +589,12 @@ Developers are typically experts who have specialized and been immersed in the r
     \item \textit{Iteration:} \\ Refine the requirements and design based on the evaluation and user feedback.
 \end{enumerate}
 \vspace{1mm}
-In short, a requirement is generally a single functional need that the system must perform or fulfill. These can be modeled for instance with \textit{use cases} and \textit{user stories} \cite{richter2014user}. For the realization, these specifications need to be transformed into a technical design and software architecture for practical implementation. User evaluation and iterative development are the key concepts in the user-centered process for guiding the development towards increasing usability and value for the users. Figure \ref{fig:iteration} illustrates the design iteration process. 
+In short, a requirement is generally a single functional need that the system must perform or fulfill. These can be modeled for instance with \textit{use cases} and \textit{user stories} \cite{richter2014user}. For the realization, these specifications need to be transformed into a technical design and software architecture for practical implementation. User evaluation and iterative development are the key concepts in the user-centered process for guiding the development towards increasing usability and value for the users. Figure \ref{fig:iteration} illustrates the design iteration process.
 \begin{figure}[b]
     \centering
     \includegraphics[trim={0cm 0cm 0cm 0.2cm}, clip, width=0.84\textwidth]{iteration.pdf}
     \caption{The design iteration cycle. Requirements are turned into a prototype implementation. The prototype is evaluated to measure if and how well the goals are met. Requirements and the resulting design are then adjusted accordingly. This cycle can be continued as long as desired or necessary.}
-    \label{fig:iteration} 
+    \label{fig:iteration}
 \end{figure}
 The idea of an iterative process matches well to modern agile software development methods, were iterations and prototypes are produced in short cycles with feedback incorporated after each cycle \cite[p.~5--8]{deuff2013user}. Evaluation can be performed for example with formal and informal usability testing methods, cognitive walkthroughs and expert reviews \cite[p.~24]{richter2014user}.
 
@@ -635,14 +635,14 @@ Instead of doing speech recognition locally on the device, a server-based soluti
     \centering
     \includegraphics[trim={0.2cm 0cm 0.2cm 0cm}, clip, width=\textwidth]{implementation.pdf}
     \caption{The basic elements of the Conversation Assistant system.}
-    \label{fig:system} 
+    \label{fig:system}
 \end{figure} \\
 It should be mentioned that the are some exceptions to running an ASR system on a smartphone. Engineers from Google Inc. published a paper in 2016, where a highly-compressed and optimized large vocabulary speech recognizer for English was shown to run in real-time on a Nexus 5 Android smartphone \cite{mcgraw2016personalized}. The size of the vocabulary was 64K words, and the median speed for recognition was seven times faster than real-time. A large memory footprint reduction was achieved with SVD-based\footnote{SVD, short for \textit{singular-value decomposition}, is a matrix factorization method.} compression and neural network quantization, where the floating-point model parameters, such as the weights, were quantized to 8-bit integers. However, computationally heavier and server-based recognizers remain generally more accurate \cite{xiong2017microsoft, xiong2016achieving}, and arguably more practical, at least from a development perspective. \\\\
 For the implementation of Conversation Assistant interface on the end-device, there are multiple possible choices: For laptops and desktop computers, it could be implemented as a desktop software application, and similarly for mobile devices as a mobile application. For both platforms, the ASR component could be either on-device or the server-based version. However, for easy universal access and platform independent implementation, a web service approach would arguably be the most sensible choice. In a web service implementation, the Conversation Assistant would be accessed through a website using a web-browser, enabling simple usage on every conceivable device. Using responsive web design, the user interface can be adapted to work well on all screen sizes. In the next section, the implementation of our prototype used for the user testing is described in detail.
 
 \subsection{Prototype} \label{sec:prototype}
 
-The primary function of the Conversation Assistant prototype was the validation of the proposed method for assisting deaf and hard of hearing persons in conversational situations. It was not intended to be a finalized or commercially ready application at this stage of the project. Instead, the prototype was only meant for use in the first round of user testing. Therefore, the implementation contained only features necessary for realizing the first round of user testing. As a consequence, the graphical user interface was left as simple as possible in order to minimize the possibility of it interfering with testing the method itself. Existing open-source software and speech recognition systems were leveraged to get quickly started with the testing process, fitting consistently with the overall theme of applying existing technology into practice that this work is founded upon. Our prototype is intended specifically for Finnish speech recognition. However, the Conversation Assistant approach itself can be applied to virtually any language, as long as an ASR system is available for that language. In the case of our prototype, the language of the speech recognizer could be changed simply by changing the acoustic model, language model and lexicon used. The prototype was implemented in the \textit{Linux} operating system environment, relying on open-source software tools and frameworks. The \textit{Kaldi} toolkit is used for doing speech recognition. A fast online decoding ASR system was needed for the prototype, which ruled out using the \href{https://github.com/aalto-speech/AaltoASR}{AaltoASR} system developed at the Aalto University Speech Recognition group. The source code for the prototype is included in appendix \ref{sec:proto}. 
+The primary function of the Conversation Assistant prototype was the validation of the proposed method for assisting deaf and hard of hearing persons in conversational situations. It was not intended to be a finalized or commercially ready application at this stage of the project. Instead, the prototype was only meant for use in the first round of user testing. Therefore, the implementation contained only features necessary for realizing the first round of user testing. As a consequence, the graphical user interface was left as simple as possible in order to minimize the possibility of it interfering with testing the method itself. Existing open-source software and speech recognition systems were leveraged to get quickly started with the testing process, fitting consistently with the overall theme of applying existing technology into practice that this work is founded upon. Our prototype is intended specifically for Finnish speech recognition. However, the Conversation Assistant approach itself can be applied to virtually any language, as long as an ASR system is available for that language. In the case of our prototype, the language of the speech recognizer could be changed simply by changing the acoustic model, language model and lexicon used. The prototype was implemented in the \textit{Linux} operating system environment, relying on open-source software tools and frameworks. The \textit{Kaldi} toolkit is used for doing speech recognition. A fast online decoding ASR system was needed for the prototype, which ruled out using the \href{https://github.com/aalto-speech/AaltoASR}{AaltoASR} system developed at the Aalto University Speech Recognition group. The source code for the prototype is included in appendix \ref{sec:proto}.
 
 \subsubsection{Kaldi ASR toolkit} \label{sec:kaldi}
 
@@ -653,7 +653,7 @@ Our prototype utilizes \href{https://github.com/alumae/gst-kaldi-nnet2-online}{G
 
 For the user test prototype, previously existing ASR models were utilized instead of training new models specifically for this purpose. As speech recognition methods, and the Kaldi toolkit correspondingly, are continuously developed further, the models used did not necessarily represent the very latest and best possible accuracy in Finnish ASR, as the models used are already a few years old. However, the primary reason the models used in the prototype were chosen over others was that they incorporated noise-robust elements. Specifically, the acoustic model had been trained with noisy real-world speech, which had not been done to the same extent for newer Finnish models available. A noise-robust ASR system was preferential for testing the Conversation Assistant in realistic conditions. The older models were nevertheless deemed to be sufficient in accuracy for our main purpose, which was to test and validate the Conversation Assistant method. First spending many weeks or months in order to harness the latest advances in ASR would be in vain, if during the user testing it becomes immediately apparent that the Conversation Assistant is not a good solution. Thus, it was preferable to get to the testing part quickly, which was enabled by using already existing models. \\\\
 The models used in our prototype were previously developed at the Aalto University Speech Recognition research group for Finnish LVCSR, using Kaldi's \textit{nnet2} setup described in \cite{povey2014parallel}. For the feature type, high resolution MFCCs are used with a 25 ms frame, shifted 10 ms at a time. In addition to MFCC features, Kaldi's neural network based online decoder uses \textit{i-vectors} as an input, which are used for doing speaker adaptation \cite{xiong2016achieving, kaldi}. An i-vector is a vector with a dimension of several hundred, and is used for representing the speaker properties. The DNN acoustic model has been trained using data from the Finnish SPEECON corpus, which is part of the international SPEECON speech database \cite{iskra2002speecon}. The Finnish corpus contains 550 adult speakers (273 males, 277 females), recorded with four microphones in four different environments, uttering a variety of prompted word sequences (e.g., names, numbers, dates, questions, single digits) and free, spontaneous speech \cite[p.~43]{kallasjoki2016}. For the training data, the headset, lapel and far-field (one meter distance) microphone channels were used from the "public place" and "car" recording environments. The realistic noise environments containing varying levels of background noise, together with the different microphone locations are well suited for producing a more noise robust model. These recordings should also match quite well to the supposed locations, where the Conversation Assistant would be used. The language model is based on text corpora from \textit{Kielipankki}, the Language Bank of Finland, which is a service for providing natural language resources to research usage. The specific text corpus used contained translated texts from the European Parliament. The vocabulary is morph-based, though it does not utilize all the latest improvements for Finnish morph-based speech recognition, as described in \cite{smit17boundaries, mansikka17parliament}. \\\\
-In a previous performance evaluation for a comparable ASR system, a WER of 29,7\% and a LER of 7,5\% were measured when using speech data collected from broadcasts of YLE, the national broadcast company of Finland. The speech data used for evaluation consisted of Finnish radio and TV news segments in 16 kHz audio files \cite{mansikkaniemi2013unsupervised}. A noise-robust acoustic model typically results in a slightly decreased overall accuracy, but improves the recognition accuracy noticeably in noisy environments \cite{kallasjoki2016}. Another advantageous feature of the models used is a fast recognition speed, which fits well to our real-time use case. The latest results obtained for the same YLE evaluation set report a WER of approximately 19\% \cite{mansikka17parliament}, showing a significant relative improvement over the older models used in the prototype. However, these models do not include noise-robust features, meaning the performance will likely decrease noticeably in noisy environments. Nevertheless, the results demonstrate the rapid pace of ASR development in recent years. 
+In a previous performance evaluation for a comparable ASR system, a WER of 29,7\% and a LER of 7,5\% were measured when using speech data collected from broadcasts of YLE, the national broadcast company of Finland. The speech data used for evaluation consisted of Finnish radio and TV news segments in 16 kHz audio files \cite{mansikkaniemi2013unsupervised}. A noise-robust acoustic model typically results in a slightly decreased overall accuracy, but improves the recognition accuracy noticeably in noisy environments \cite{kallasjoki2016}. Another advantageous feature of the models used is a fast recognition speed, which fits well to our real-time use case. The latest results obtained for the same YLE evaluation set report a WER of approximately 19\% \cite{mansikka17parliament}, showing a significant relative improvement over the older models used in the prototype. However, these models do not include noise-robust features, meaning the performance will likely decrease noticeably in noisy environments. Nevertheless, the results demonstrate the rapid pace of ASR development in recent years.
 
 \subsubsection{Application} \label{sec:application}
 
@@ -663,7 +663,7 @@ Our simple GUI implementation consists of a single button to start and stop the 
     \centering
     \includegraphics[width=\textwidth]{gui2.png}
     \caption{The Conversation Assistant prototype application in use.}
-    \label{fig:gui} 
+    \label{fig:gui}
 \end{figure} \\\\
 The application uses version three of the Python programming language. The \href{http://www.pygtk.org/}{PyGTK} API for using GTK+ with Python is used for the GUI. \href{https://www.gtk.org/}{GTK+}, originally known as the \textit{GIMP Toolkit}, is a multi-platform, open-source toolkit for creating graphical user interfaces. GStreamer and the Kaldi GStreamer plugin are used through the PyGst Python binding. In GStreamer, the default audio input of the OS is used, meaning that an external soundcard and microphone will work automatically just by setting it as the default audio device from the system sound settings, instead of having to configure it manually in the GStreamer pipeline. \\\\
 The application functions in the following way: A GStreamer pipeline captures audio from the Pulse Audio sound server, the sound interface system used in Ubuntu and many other Linux distributions. The audio signal is processed and routed to Kaldi's online nnet-2 decoder. The decoder has two return functions: one returns the partial recognition result one word at a time, and the other returns the complete recognition result after an utterance has been deemed to have ended. The results have to be then parsed to remove the morph boundary markers present. The partial recognition result is constantly updated on the screen, providing real-time speech recognition display appearing one word at a time. The final, whole utterance is then transferred to the history view. Figure \ref{fig:python} presents the software architecture of the prototype. The prototype was developed and used in a Linux environment running Ubuntu 16.04, though Windows and MacOS are also technically supported by Kaldi, GStreamer, and GTK+.
@@ -671,7 +671,7 @@ The application functions in the following way: A GStreamer pipeline captures au
     \centering
     \includegraphics[trim={0cm 0cm 0cm 0cm}, clip, width=\textwidth]{gui.pdf}
     \caption{The Conversation Assistant prototype software architecture.}
-    \label{fig:python} 
+    \label{fig:python}
 \end{figure}
 
 \clearpage
@@ -680,7 +680,7 @@ The application functions in the following way: A GStreamer pipeline captures au
 
 User testing was used to validate the Conversation Assistant approach for helping with the conversational challenges faced by hearing impaired persons, and to examine how well the prototype succeeds in this task. Through user testing, it is possible to find out the key areas for improvement in future development, following the user-centered design philosophy. Additionally, the user tests were used to gauge the interest of potential end-users towards this type of assistive approach, and its commercial potential. Through user testing, it was also possible to collect valuable feedback and opinions from real end-users, such as what kind of features would they want to have, and in what kind of situations would they use the Conversation Assistant. With the information learned from user testing, it is possible to develop both the Conversation Assistant prototype and the method itself  to better fulfill the needs of the target audience, making it more helpful to them. Not only can this help hearing impaired people lead better lives, but it can also increase the commercial potential of this type of assistive application. More commercial potential will in turn increase the likelihood that applications actually become available to the general public and in many different languages. \\\\
 Section \ref{sec:objectives} presents the objectives of the user testing, meaning the questions that should be answered with the testing process. Also, why these questions were chosen is discussed. Section \ref{sec:testdesign} describes methods for how these questions can be answered, and presents the chosen testing approach as well as the reasoning behind it. Section \ref{sec:testplan} presents the test plan implemented based on the chosen methods. Section \ref{sec:quest} reviews questionnaire construction principles and presents the final questionnaire used in the user testing. Finally, section \ref{sec:execution} describes the practical execution of the designed user test, including a background noise reproduction method to more accurately simulate a realistic use environment for the Conversation Assistant.
- 
+
 \subsection{Objectives} \label{sec:objectives}
 
 The primary goal of the user testing was to determine if the Conversation Assistant method is helpful, and to assess how useful it is in the opinion of intended end-users. In the context of this thesis, usefulness is understood to measure how well the system fulfills and performs its intended function, which in this case translates to how much and well does the Conversation Assistant help hearing impaired persons to follow and participate in conversational situations. The secondary goal was to identify which factors contribute the most towards increased usefulness for the end-users. The reasoning behind the secondary objective was that while it is easy to identify technical aspects that could be improved, like for example the speed of the speech recognition, it may not be of importance for the end-users. If for example the users feel that on average, the speech recognition accuracy is already good enough, then improving it further would probably not increase the perceived usefulness. Therefore, the user tests were designed to focus more on qualitative properties as experienced by the users, instead of quantitative, objective measurements for the performance of the Conversation Assistant system. The accuracy and speed of speech recognition is therefore assessed through qualitative data at this stage, answering whether users feel it is already adequate, or if they think it needs to be improved. \\\\
@@ -762,7 +762,7 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
 % make a custom enumerate list for the questionnaire
 \newlist{questionnaire}{enumerate}{4}
 \setlist[questionnaire]{label=\textbf{\arabic*.}, leftmargin=1.1cm, labelsep=-0.2cm, align=left, itemsep=2.5mm}
-% settings for tasks 
+% settings for tasks
 \settasks{
     label-align    = left,
     label-width    = 0em,
@@ -777,7 +777,7 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
     \noindent
     \hspace{0.35cm}
     \textbf{Background information}
-    \vspace{0.15cm} 
+    \vspace{0.15cm}
     \begin{questionnaire}
         \item Name?
         \item Email?
@@ -820,7 +820,7 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
         \end{tasks}
     \end{questionnaire}
     \noindent
-    \hspace{0.35cm} \textbf{Section 1}  
+    \hspace{0.35cm} \textbf{Section 1}
     \begin{questionnaire}[resume]
         \item Did the Conversation Assistant help you to understand speech?
         \begin{tasks}[](10)
@@ -885,8 +885,8 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
     \end{questionnaire}
     \noindent
     \hspace{0.35cm}
-    \textbf{Section 2}  
-    \vspace{0.15cm} 
+    \textbf{Section 2}
+    \vspace{0.15cm}
     \begin{questionnaire}[resume]
         \item Did the Conversation Assistant help you to understand speech?
         \begin{tasks}[](10)
@@ -964,7 +964,7 @@ The questionnaire was implemented with \href{https://www.google.com/forms/about/
     \noindent
     \hspace{0.35cm}
     \textbf{Debriefing}
-    \vspace{0.15cm} 
+    \vspace{0.15cm}
     \begin{questionnaire}[resume]
         \item Was the Conversation Assistant useful in the test situations?
         \begin{tasks}[](10)
@@ -1031,7 +1031,7 @@ The testing sessions were conducted at the Aalto University Acoustics Laboratory
     \centering
     \includegraphics[trim={1.5cm 0cm 1.5cm 0cm}, clip, width=\textwidth]{setup2.pdf}
     \caption{User test setup in the listening room.}
-    \label{fig:setup} 
+    \label{fig:setup}
 \end{figure}
 \begin{figure}[h]
     \centering
@@ -1045,14 +1045,14 @@ The testing sessions were conducted at the Aalto University Acoustics Laboratory
 In order for the user test situation to better reflect the actual environments and situations where the Conversation Assistant would be typically used, background noise recordings were utilized to simulate a realistic setting. Background noise is one of the critical factors for the whole Conversation Assistant process in two ways: Firstly, noise directly affects how well people can hear and understand speech \cite{pulkki2015communication}, and secondly, noise can drastically affect the accuracy of automatic speech recognition \cite{kallasjoki2016}. Furthermore, the impact of noise on speech intelligibility is generally even more pronounced for hearing impaired persons \cite{healy2016difficulty}, which was also reported by the test participants. \\\\
 The uncommonly low background noise level and excellent acoustic properties of the listening room, namely, a short reverberation time of 0,3 seconds, offer a very idealized environment for both listening to speech and automatic recognition of speech. As such, results obtained without the added background noise would apply poorly to real-life usage. During the user tests, background noise recordings proved to be essential for successful testing, as many of the test subjects could hear and understand speech remarkably well with the help of modern hearing aids and cochlear implants, even though they were clinically categorized with severe hearing loss. The background noise level was set to a predefined level at the beginning of each test section, approximately matching the sound pressure level measured at the recording location. The level was adjusted during the test session if needed, in cases where the test participant felt that they could hear too well, meaning that they didn't need to rely on the Conversation Assistant at all in order to follow the conversation. \\\\
 The multi-channel audio listening setup installed in the listening room, combined with surround sound recordings in B-format enabled us to accurately and realistically reproduce the surround sound field present at the recording locations. B-format surround recordings are captured using a coincident microphone array, which produces four microphone signals: one omnidirectional ($W$), and three figure-of-eight channels on an orthogonal axis ($X,Y,Z$). These four signals describe the full-sphere sound field at the location of the microphone array, and can be decoded for playback on an arbitrary loudspeaker configuration (though a minimum of four loudspeakers are needed for reproducing the horizontal plane and at least six for full-sphere sound). \cite{furness1990ambisonics, pulkki2015communication} \\\\
-The Aalto University Spatial Sound research group provided us with previously made background noise recordings of public places, recorded using a SoundField ST350 portable surround microphone. Each of the two sections of the user test had their own noise environment. The first background is a city street containing mostly traffic noise, recorded near the Havis Amanda statue at the Helsinki Market Square (Kauppatori). The second is a busy cafe located on the Boulevard (Bulevardi) street in Helsinki, containing clamor and noise typical for busy cafes with poor acoustics, as well as some quiet background music. These two environments were selected because they represent locations were conversations often take place, the type of noise is challenging to both humans and automatic speech recognition, and the recordings were consistent in sound and level. \\\\ 
+The Aalto University Spatial Sound research group provided us with previously made background noise recordings of public places, recorded using a SoundField ST350 portable surround microphone. Each of the two sections of the user test had their own noise environment. The first background is a city street containing mostly traffic noise, recorded near the Havis Amanda statue at the Helsinki Market Square (Kauppatori). The second is a busy cafe located on the Boulevard (Bulevardi) street in Helsinki, containing clamor and noise typical for busy cafes with poor acoustics, as well as some quiet background music. These two environments were selected because they represent locations were conversations often take place, the type of noise is challenging to both humans and automatic speech recognition, and the recordings were consistent in sound and level. \\\\
 The Directional Audio Coding (DirAC) method developed at the Aalto University Acoustics Lab was used to decode the B-format recordings for the nine-channel symmetrical speaker configuration used \cite{pulkki2015communication, pulkki2006directional}. The DirAC decoder divides the B-format audio file into frequency bands using the Equivalent Rectangular Bandwidth (ERB) psychoacoustic frequency scale. For each frequency band, the B-format audio is then divided into single-channel audio channels for each loudspeaker using virtual cardioid microphones based on the loudspeaker configuration information given to the decoder. Directional and diffuseness analysis is performed for each band and used to adjust the gain and diffusion parameters of each loudspeaker channel within the frequency band. Each loudspeaker signal is then the sum of all the frequency bands for that channel \cite{pulkki2006directional}. \\\\
 Using DirAC, the recordings were pre-rendered into nine-channel uncompressed PCM audio files (.wav) for easy playback. Only the horizontal sound plane was used, as it was deemed to be enough for the purposes of the user test. Both audio scenes had multiple recordings of around one minute in length on average, made successively in the same location. For the tests, a constant background noise playing continuously during each test section was needed. Therefore, each pre-rendered nine-channel recording was split into separate mono files for each channel using \href{https://se.mathworks.com/products/matlab.html}{MATLAB}. Then the clips from each channel were edited together to form a longer loop in an audio editing software, and finally combined back to a nine-channel file in MATLAB. The \href{https://cycling74.com/products/max/}{Max/MSP} visual programming language was used to play the resulting nine-channel PCM audio loops. The Max patch consists of a simple GUI for loading the audio file, controlling playback and adjusting the volume, which is presented in figure \ref{fig:max}. \\
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{max.png}
     \caption{Max/MSP patch for playing nine-channel audio files.}
-    \label{fig:max} 
+    \label{fig:max}
 \end{figure}
 
 \subsubsection{Test participants}
@@ -1094,33 +1094,33 @@ The plan was for 10-12 test participants. After the preliminary filtering we had
         \caption*{\textbf{Q6:} "Do you own a tablet?" \vspace{2mm}}
     \end{subfigure}
     \caption{Binary questions Q5 and Q6.}
-    \label{fig:results_pie1} 
+    \label{fig:results_pie1}
 \end{figure}
 In this section, the results obtained from the Conversation Assistant user testing are presented and analyzed. In the user testing, we focused on obtaining a representative opinion of the intended end-users on the overall usefulness of the Conversation Assistant, as well as gathering user feedback on the key areas still in need of improvement. The main objective was to validate the Conversation Assistant approach, or in other words, to answer the question \textit{"is the Conversation Assistant helpful"}. By design, the user test produced qualitative data in the form of subjective opinions and feelings. The MATLAB software environment was used for analyzing the test data, and producing all figures. The reporting of the results begins with the relevant background data gathered. Section \ref{sec:numerical} presents the numerical ratings given by the users, with the data for each of the four test sections presented in its figure. A summary of the written feedback given by the test participants is presented in section \ref{sec:verbal}. In section \ref{sec:analysis}, the results are analyzed and interpreted, and the research questions presented in the beginning are tentatively answered. \\\\
 Answers to all binary questions, i.e., questions with a \textit{yes or no} answer, are visualized in figures \ref{fig:results_pie1} and \ref{fig:results_pie2}. The first three of these questions were from the introduction section's background questionnaire (Q5, Q6, Q8), and the fourth from the debriefing section (Q32). All test participants owned a smartphone, and five out of nine owned also a tablet computer. Only 33\% of the test participants reported that they had previously used speech recognition-based applications or services. However, the reliability of this question can be poor since it is not clear if the participants understood what the term means and what services actually use ASR technology. Of the three persons that answered positively, one had used Youtube's automatic captioning, one had used Google Translate's speech-to-text feature, and one had tried speech recognition technology previously in a test session in Aalto University. Eight people corresponded to question 32, with 75\% preferring to pay a one-time payment for this type of application. The reasons given for this preference in the written feedback was quite varying. One person commented that they would not like to pay for it every month in case they end up not using it actively in some months. Another person commented that the monthly payment option could be good if it included all updates and upgrades to the application. The one person who did not answer the question commented that the \textit{Social Insurance Institution of Finland} (Kela) should provide this service for free. One person commented that in general, they would like to first test the application in order to see how well it works before paying for it.
 \begin{figure}[t]
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_3.png}
-        \caption*{\textbf{Q8:} "Have you previously used an application or service that uses automatic speech recognition?"} 
+        \caption*{\textbf{Q8:} "Have you previously used an application or service that uses automatic speech recognition?"}
     \end{subfigure} \hspace{5mm}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth, trim={1.5cm 0.6cm 1.5cm 0.2cm}, clip]{T1_4.png}
-        \caption*{\textbf{Q32:} "Would you rather pay a monthly fee or a one-time payment for an application like the Conversation Assistant?"} 
+        \caption*{\textbf{Q32:} "Would you rather pay a monthly fee or a one-time payment for an application like the Conversation Assistant?"}
     \end{subfigure}
     \vspace{4mm}
     \caption{Binary questions Q8 and Q32.}
-    \label{fig:results_pie2} 
+    \label{fig:results_pie2}
 \end{figure}
 
 \subsection{Numerical ratings} \label{sec:numerical}
 
 The numerical data obtained, i.e., the numerical ratings given by the test participants, are presented with a box plot for each question, divided by the section. The individual numbers given by the test participants for each question are included in appendix \ref{sec:answers}. In the box plots, the red central mark represents the median value. The bottom of the box (in blue) corresponds to the 25th percentile, and the top of the box to the 75th percentile. It should be noted that when the median is not centered in the box, it shows sample skewness, meaning the values are distributed asymmetrically. The lines in black, extending from the box, display the range of all values that are not considered outliers. A value is judged to be an outlier and marked with a red cross if it is more than 1,5 times the interquartile range (i.e., the size of the box) away from the top or bottom of the box. \cite{boxplot} \\\\
-Figure \ref{fig:results1} presents the data from the background questionnaire, which consists only of one question measuring the self-perceived proficiency with computers and mobile devices. 
+Figure \ref{fig:results1} presents the data from the background questionnaire, which consists only of one question measuring the self-perceived proficiency with computers and mobile devices.
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{T2_box1.pdf}
     \caption{Question 10: "In your own opinion, how proficient are you at using computers and mobile devices in everyday life?"}
-    \label{fig:results1} 
+    \label{fig:results1}
 \end{figure}
 The question was included in order to get a rough estimate for how much experience the participant has with these devices and how comfortable they are with technology in general. The subjective wording in the assessment served a purpose as well: Someone who feels that they are good with smart devices likely has a very positive attitude towards technology, regardless of how much knowledge and skill they might actually possess. Conversely, someone who rates their skills very low likely has some aversion and negative expectations towards technology, even if their skills might actually be relatively comparable to someone with a higher rating. Therefore, the answers to this question, together with the other background questions, can be quite useful for better understanding the answers to other questions. \\\\
 For example, if an experienced user thinks the application is easy to use, it might not tell that much about its actual ease-of-use, especially from the viewpoint of inexperienced users. If a person with a low reported proficiency thinks it's hard to use, it can be more due to their lack of experience with smart devices together with a somewhat negative attitude, instead of any design flaws in the application itself. With the median value of 5/7, most test participants are arguably familiar with smart devices and relatively comfortable using them. Two of the participants rated themselves at 3/7, while all others rated themselves with a five or higher, with three participants giving themselves the full rating of 7/7. The question also served as a gentle introduction to the questionnaire's format and functioning, preparing and giving the participants some practice with it before moving on to the main questions. \\\\
@@ -1136,7 +1136,7 @@ Figure \ref{fig:results2} presents the ratings from section one of the user test
     \centering
     \includegraphics[width=\textwidth]{T2_box2.pdf}
     \caption{Section 1 results.}
-    \label{fig:results2} 
+    \label{fig:results2}
 \end{figure}
 In question 11, the test users seemed to agree that the Conversation Assistant did help them understand speech at least to some extent. A rating of four is the median for values from one to seven, meaning the median of five received can be considered a positive result. Most of the ratings are approximately between four and six, which can be considered a good result. Question 12 indicates that generally the users thought using the Conversation Assistant was easy. Results for question 13 suggests that the Conversation Assistant did make it a little bit harder to follow speech. The range of ratings is quite large, as is the size of the box, meaning the opinions diverged considerably. In question 14, the participants were very unanimous in the opinion that the speech recognizer was fast enough in section one, with one notable exception. Speech recognition accuracy was rated as quite good as well in question 15. \\\\
 Figure \ref{fig:results3} presents the data from section two of the user test. The questions were now the following for the free conversation task:
@@ -1152,7 +1152,7 @@ Figure \ref{fig:results3} presents the data from section two of the user test. T
     \centering
     \includegraphics[width=\textwidth]{T2_box3.pdf}
     \caption{Section 2 results.}
-    \label{fig:results3} 
+    \label{fig:results3}
 \end{figure}
 Compared to section one, there was one more question (question 19) relating specifically to conversations. Other questions are the same. In question 16, the Conversation Assistant's helpfulness is rated a little lower on average than in section one, but remains still a positive rating. However, the range of ratings vary all the way from one to seven. Likewise, easiness to use is still rated quite highly in question 17, though there is one disagreeing outlier. Question 18 indicates the Conversation Assistant did make it somewhat harder to follow speech. Question 19 was specific to section two, and asked if the using the Conversation Assistant slowed the conversation. The median is one, meaning the best possible value, indicating that it did not slow the conversation noticeably in the test users' opinion. In one written feedback given to this question, a test participant commented that using it made the conversation faster since it was so easy to follow the speech with the help of the Conversation Assistant. Question 20 asked about the speed of the speech recognition. Again, speed was deemed very good on average with a median of six, and most values within the range from five to seven. Accuracy was rated a little lower this time, but still somewhat positively. In written feedback, the accuracy was also mentioned to be worse than in section one more than once. \\\\
 Figure \ref{fig:results4} presents the data from the debriefing. The questions were the following:
@@ -1164,7 +1164,7 @@ Figure \ref{fig:results4} presents the data from the debriefing. The questions w
     \centering
     \includegraphics[width=\textwidth]{T2_box4.pdf}
     \caption{Debriefing results.}
-    \label{fig:results4} 
+    \label{fig:results4}
 \end{figure}
 In question 22, the median rating for the overall usefulness of the Conversation Assistant was five, with most values within the range from three to six. A good indicator for a positive result is that no test user gave a rating of one, which corresponded to that it was not at all useful. This can be interpreted to mean that the Conversation Assistant did help all test users at least a little. Also, one test participant gave a rating of seven, indicating that the Conversation Assistant was very helpful for that person. The results are not ideal, but suggests that there is indeed potential in this type of assistive solution. With regards to question 24, most people seemed to think that free adjustment of the font is important, though some commented in the written feedback that while it is good to have as an option, they personally don't feel the need to really change the font size or color that much. Many people commented that for the elderly, who commonly have declined vision as well as hearing loss, or for the visually impaired, changing the font can be very important. \\\\
 Figure \ref{fig:results5} presents the results for how much the participants would be ready to pay monthly or as a one-time purchase for an application like the Conversation Assistant.
@@ -1172,7 +1172,7 @@ Figure \ref{fig:results5} presents the results for how much the participants wou
     \centering
     \includegraphics[width=\textwidth]{T2_box5.pdf}
     \caption{"How much would you be ready to pay for an application like the Conversation Assistant?". Price in euros.}
-    \label{fig:results5} 
+    \label{fig:results5}
 \end{figure}
 For the monthly payment type, most people could imagine paying between 10-20€. For the one-time payment option that was much more popular than the monthly option, the answers diverged quite heavily to cover almost all six options. Some would only pay five euros or less, while many would pay more than 30€. In the written feedback, some mentioned that the price they would be willing to pay depends on how well it works. One participant commented that they would pay even several hundred euros if the application is really good. \\\\
 Figure \ref{fig:results6} presents a side by side comparison of ratings to the same questions between section one and two. Overall, there does not seem to be major differences between the two sections, with each question getting very similar ratings from both. The ratings for the free conversation appear to be a little worse, with a one rating lower median value in three of the five questions.
@@ -1180,7 +1180,7 @@ Figure \ref{fig:results6} presents a side by side comparison of ratings to the s
     \centering
     \includegraphics[width=\textwidth]{comparison.pdf}
     \caption{Comparison of the ratings from section one and two. Ratings for the same question from both sections are grouped together.}
-    \label{fig:results6} 
+    \label{fig:results6}
 \end{figure}
 
 \subsection{Written feedback} \label{sec:verbal}
@@ -1269,9 +1269,9 @@ Based on these comments, the Conversation Assistant seemed to be useful for most
 
 \subsection{Analysis} \label{sec:analysis}
 
-Overall, the results of the user testing can be considered positive. Even though the number of participants was relatively low, the ratings and feedback given seem to clearly validate the Conversation Assistant approach as helpful for the hearing impaired. Based on the written feedback, the level of usefulness provided by the simple prototype was already sufficient for many people to express desire towards using it in practice in their own everyday life. The speech recognition accuracy was generally considered to be the limiting factor for usefulness in an otherwise well-functioning application. Therefore, speech recognition accuracy should be primarily improved for increased utility. Good ratings for the easiness to use indicate that the simple user interface design style and basic layout of the elements was suitable. The Conversation Assistant seems to make speech a little bit harder to follow on average, but this was to be expected. Having to divide attention between the speaker and the screen has previously been shown to be distracting in \cite{kushalnagar2015tracked}. The rating for the distraction could be more meaningfully understood when compared to the same rating for a human translator. The conclusion is that ideally, the application's text display style and position should be designed in a way that would limit the visual dispersion between the speaker and the screen. For quantifying visual dispersion, Kushalnagar et al. suggested using eye-tracking to measure how much the user has to move their eyes between the two visual sources. \\\\ 
+Overall, the results of the user testing can be considered positive. Even though the number of participants was relatively low, the ratings and feedback given seem to clearly validate the Conversation Assistant approach as helpful for the hearing impaired. Based on the written feedback, the level of usefulness provided by the simple prototype was already sufficient for many people to express desire towards using it in practice in their own everyday life. The speech recognition accuracy was generally considered to be the limiting factor for usefulness in an otherwise well-functioning application. Therefore, speech recognition accuracy should be primarily improved for increased utility. Good ratings for the easiness to use indicate that the simple user interface design style and basic layout of the elements was suitable. The Conversation Assistant seems to make speech a little bit harder to follow on average, but this was to be expected. Having to divide attention between the speaker and the screen has previously been shown to be distracting in \cite{kushalnagar2015tracked}. The rating for the distraction could be more meaningfully understood when compared to the same rating for a human translator. The conclusion is that ideally, the application's text display style and position should be designed in a way that would limit the visual dispersion between the speaker and the screen. For quantifying visual dispersion, Kushalnagar et al. suggested using eye-tracking to measure how much the user has to move their eyes between the two visual sources. \\\\
 Some people commented that due to the simplicity of the conversational situation, they did not need the Conversation Assistant as much as they possibly would in other situations. Some of the test participants also reported that they could hear pretty well in spite of the background noise. Some were accustomed to using lip-reading, which they could rely on instead of having to watch the Conversation Assistant, and glancing at the Conversation Assistant distracted from lip-reading. One major observation is that the speed of the speech recognition was clearly deemed to be fast enough. Speech recognition accuracy got a relatively good rating as well in both sections, though many mentioned in the written feedback that there were a lot of transcription errors especially in the conversation task. A sufficient recognition speed rating means that all future effort can be put towards improving the accuracy of the ASR system, instead of having to try to also optimize for the recognition speed at the same time. One occurrence worth mentioning is that one of the two completely deaf test participants was able to correctly answer all word descriptions in the word explaining task, which many of the much better hearing test participants could not do. This observation gives more supports for the usefulness of the Conversation Assistant, as a deaf person was able to correctly understand descriptions for words only by reading them from the Conversation Assistant's display. Of course, mental acuity does likely affect the results to some degree, and even though the words were the same for everyone, the descriptions varied slightly from person to person. \\\\
-There are some potential error sources and human biases that have likely somewhat affected the results. One factor to keep in mind when analyzing the results is that the people who participated in the testing showed enough interest towards the Conversation Assistant to take part in the testing in the first place, meaning the test participants have to be viewed as inherently positively biased towards the Conversation Assistant in some small degree. It seems probable that someone with no interest towards this type of assistive application would most probably not participate in testing it either. As mentioned, section one and two used different background noise recordings, which might have also affected the results slightly. For the pricing questions, the answer price ranges were mistakenly written with inclusive ranges between different options, instead of exclusive ranges, meaning the different options were not completely unambiguous. For example, if a test user wanted to answer \textit{"ten euros"}, there was two possible categories to choose from, which both included this price. It is possible that this could have skewed the pricing results a bit into either direction. The test situation used corresponded to one particular type of use scenario, meaning the results obtained may not fully apply to different settings. More testing in different situations, such as in group conversations or lectures  is needed for comprehensive validation. 
+There are some potential error sources and human biases that have likely somewhat affected the results. One factor to keep in mind when analyzing the results is that the people who participated in the testing showed enough interest towards the Conversation Assistant to take part in the testing in the first place, meaning the test participants have to be viewed as inherently positively biased towards the Conversation Assistant in some small degree. It seems probable that someone with no interest towards this type of assistive application would most probably not participate in testing it either. As mentioned, section one and two used different background noise recordings, which might have also affected the results slightly. For the pricing questions, the answer price ranges were mistakenly written with inclusive ranges between different options, instead of exclusive ranges, meaning the different options were not completely unambiguous. For example, if a test user wanted to answer \textit{"ten euros"}, there was two possible categories to choose from, which both included this price. It is possible that this could have skewed the pricing results a bit into either direction. The test situation used corresponded to one particular type of use scenario, meaning the results obtained may not fully apply to different settings. More testing in different situations, such as in group conversations or lectures  is needed for comprehensive validation.
 
 \section{Conclusions} \label{sec:loppu}
 
@@ -1284,10 +1284,10 @@ In recent years, speech recognition has become popular and commonplace among con
 
 \subsection{Future work}
 
-As mentioned previously, there remains a lot of testing that could be done for further development of the Conversation Assistant. These include objective performance measures for the speech recognition accuracy and speed, which enable the comparison of different speed recognition techniques and implementations. The helpfulness of the Conversation Assistant could also be quantified for the same reasons, for example by counting the number of correctly understood words in the word explanation task. Descriptive evaluation metrics for the understandability and quality of speech recognition results would be very useful in evaluation the Conversation Assistant. One interesting aspect to quantify would be how useful the Conversation Assistant approach is depending on the level of hearing loss. Whether deaf and hard of hearing people use the application differently could be investigated as well. This might have some implications for the user interface design, in the case the are sub user groups with different needs and interaction styles. The effect of correct punctuation of the recognition results towards the understandability and usefulness of the transcriptions could be also investigated. In our user test, none of the users explicitly mentioned correct punctuation as desirable, but previous research has indicated it could improve the understandability of the text \cite{prietch2015application}. The phrase \textit{"there's no data like more data"} has been often quoted among machine learning practitioners, but it also applies well to user testing. \\\\ 
+As mentioned previously, there remains a lot of testing that could be done for further development of the Conversation Assistant. These include objective performance measures for the speech recognition accuracy and speed, which enable the comparison of different speed recognition techniques and implementations. The helpfulness of the Conversation Assistant could also be quantified for the same reasons, for example by counting the number of correctly understood words in the word explanation task. Descriptive evaluation metrics for the understandability and quality of speech recognition results would be very useful in evaluation the Conversation Assistant. One interesting aspect to quantify would be how useful the Conversation Assistant approach is depending on the level of hearing loss. Whether deaf and hard of hearing people use the application differently could be investigated as well. This might have some implications for the user interface design, in the case the are sub user groups with different needs and interaction styles. The effect of correct punctuation of the recognition results towards the understandability and usefulness of the transcriptions could be also investigated. In our user test, none of the users explicitly mentioned correct punctuation as desirable, but previous research has indicated it could improve the understandability of the text \cite{prietch2015application}. The phrase \textit{"there's no data like more data"} has been often quoted among machine learning practitioners, but it also applies well to user testing. \\\\
 For testing with a sensible real-world implementation, a server-based speech recognition system should be implemented with a web interface or mobile application. Comparing on-device and server-based speech recognizers could be done as well. As shown by \cite{mcgraw2016personalized}, it is possible to run an English LVCSR system on smartphone hardware. Investigating the same possibility for Finnish language recognition could be worthwhile in relation to the Conversation Assistant. Using a combination of on-device and server-based recognition could be implemented as well, where a server-based recognizer could be primarily used for better accuracy, but with a locally running recognizer as a back-up when the internet connection is slow or not available. \\\\
 Testing the Conversation Assistant in a group situation with multiple speakers was identified as the logical next step. Staging a group conversation session would bring along many new complications and practical challenges compared to the relatively simple case of having just one test user and one person administering the test. There are also some unresolved technical challenges, like ensuring good quality audio input from all speakers without complicated microphone setups involving multiple microphones. Noise-robust conversational speech recognition is arguably critical for the success of the Conversation Assistant. Improving the speech recognition accuracy of the prototype was identified in the user testing to be very important for increased utility of the application. Therefore, new and better speech recognition models for noise-robust conversational speech should be trained for future testing. These models could also take advantage of the latest improvements to the Kaldi toolkit, such as the new \textit{"nnet3"} chain DNN-HMM models, which should be considerable faster for online decoding. Likewise, different microphone configurations and DSP-techniques could be investigated for improved speech recognition accuracy and recognition of different speakers. Speaker diarization, meaning the (visual) separation of recognition results based on the speaker, was mentioned to be desirable by multiple test participants. In group conversation situations, such as meetings, the mobile devices of each participant could be effectively used as wireless microphones. This would work by each person having their device in front of them, and data could be shared through the internet or with Bluetooth. This type of arrangement could enable relatively easy speaker diarization in addition to improved SNR of the speech signals compared to a single microphone. Beamforming and directional microphone arrays could also be used for noise suppression and speaker diarization. Improved techniques for example to directional noise reduction were recently presented in \cite{delikaris2017parametric}. \\\\
-The visual dispersion caused by the Conversation Assistant user having to divide their attention between the speaker and the screen displaying text could be reduced with an augmented reality text display. With AR, the text transcriptions could be for example displayed floating next to speakers head and mouth for minimal visual dispersion. For mobile devices, AR text display could be implemented by utilizing for example the \href{https://developer.apple.com/arkit/}{Apple ARKit} on iOS devices. In this type of setup, the user would follow a speaker completely through the screen by pointing the device's camera at this person, with the virtual text overlaid on top of the real-world video feed. Additionally, the audio-visual speech recognition technique described in section \ref{subsec:work} could be used in this case to potentially improve the recognition accuracy. Another option would be to use special AR or \textit{mixed reality} glasses, such as the Microsoft HoloLens, though these can be quite cumbersome for this particular purpose. 
+The visual dispersion caused by the Conversation Assistant user having to divide their attention between the speaker and the screen displaying text could be reduced with an augmented reality text display. With AR, the text transcriptions could be for example displayed floating next to speakers head and mouth for minimal visual dispersion. For mobile devices, AR text display could be implemented by utilizing for example the \href{https://developer.apple.com/arkit/}{Apple ARKit} on iOS devices. In this type of setup, the user would follow a speaker completely through the screen by pointing the device's camera at this person, with the virtual text overlaid on top of the real-world video feed. Additionally, the audio-visual speech recognition technique described in section \ref{subsec:work} could be used in this case to potentially improve the recognition accuracy. Another option would be to use special AR or \textit{mixed reality} glasses, such as the Microsoft HoloLens, though these can be quite cumbersome for this particular purpose.
 
 \clearpage
 
@@ -1384,7 +1384,7 @@ The raw data from the user tests is included here. Each set of answers is identi
         \caption*{Q15}
     \end{subfigure}
     %\caption{Introduction and section 1 results.}
-    %\label{fig:data} 
+    %\label{fig:data}
 \end{figure}
 
 \begin{figure}[h!]
@@ -1422,7 +1422,7 @@ The raw data from the user tests is included here. Each set of answers is identi
         \caption*{Q23}
     \end{subfigure}
     %\caption{Section 2 and debriefing results.}
-    %\label{fig:data2} 
+    %\label{fig:data2}
 \end{figure}
 
 \clearpage
@@ -1433,7 +1433,7 @@ The raw data from the user tests is included here. Each set of answers is identi
 
 %\lstset{
 %   language=matlab,
-%   basicstyle=\ttfamily\scriptsize, % \tiny 
+%   basicstyle=\ttfamily\scriptsize, % \tiny
 %   inputencoding=utf8,
 %   extendedchars=true,
 %}
